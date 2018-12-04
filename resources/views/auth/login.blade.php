@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>AfghanYouthDev</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/logo2.png"/>
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -109,7 +109,12 @@
 					</div>
 					
 				</form>
+				<div class="text-center">
+				<footer>Powered by 
+					<span class="afg">Afg</span><span class="han">han</span><span class="youth">Youth</span><span class="dev">Dev</span> </footer>
+				</div>
 			</div>
+				
 		</div>
 	</div>
 	

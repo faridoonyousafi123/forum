@@ -24,7 +24,7 @@ class ChannelsController extends Controller
      */
     public function create()
     {
-        //
+        return view('channels.create')->with('channels', Channel::all());
     }
 
     /**

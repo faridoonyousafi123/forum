@@ -3,7 +3,7 @@
 } */
 
 
-
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -26,6 +26,7 @@
   font-family: Poppins-SemiBold;
   src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
 }
+
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -147,6 +148,18 @@ button:hover {
 
 iframe {
 	border: none !important;
+}
+footer {
+  
+  font-family: 'Gamja Flower', cursive;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  color: #707070;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 
@@ -594,3 +607,20 @@ i{
 .bg2 {background-color: #1da1f2}
 .bg3 {background-color: #ea4335}
 .bg4{background-color: black}
+
+/*/////////////////////////////////////////////////////////////////
+[AfghanYouthDev]*/
+
+.afg{
+  color:#ef5b99;
+}
+.han{
+  color:#ffc20e;
+}
+.youth{
+ 
+  color:#7ea831;
+}
+.dev{
+ color:#ef4123;
+}
