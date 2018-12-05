@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 
 
 	// Counter Number
-	$('.count').each(function () {
+	$('.count-dashboard').each(function () {
 		$(this).prop('Counter',0).animate({
 			Counter: $(this).text()
 		}, {

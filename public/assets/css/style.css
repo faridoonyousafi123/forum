@@ -349,7 +349,9 @@ body {
   display: table;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  width: 100%; }
+  width: 100%; 
+  
+}
 
 p {
   font-size: 16px;
@@ -459,13 +461,13 @@ canvas {
     top: 0px;
     height: 37px;
     width: 10px;
-    background: #e8e9ef; }
+     }
   .order-table:after {
     right: -1px; }
   .order-table:before {
     left: -1px; }
   .order-table tr th {
-    background: #e8e9ef; }
+    background: #d6bf1b; }
   .order-table tr td:last-child, .order-table tr th:last-child {
     text-align: center; }
   .order-table tr:last-child td {
@@ -1448,9 +1450,9 @@ header .form-inline {
   .table-stats table td {
     border: none;
     border-bottom: 1px solid #e8e9ef;
-    color: #868e96;
-    font-size: 12px;
-    font-weight: normal;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
     padding: .75em 1.25em;
     text-transform: uppercase; }
     .table-stats table th img,
@@ -2513,7 +2515,24 @@ footer.site-footer {
 }
 .delete{
   background-color: #bd3131 !important;
+  width: 31.25px;
 }
 .delete:hover{
   background-color: #e22323 !important;
+}
+.dataTables_info{
+  margin-top:20px; 
+  background-color:#d6bf1b;
+  text-align: center;
+  font-weight: bold !important;
+  color: white;
+  width: 300px;
+
+}
+.pagination{
+  margin-top:20px; 
+}
+.dataTables_paginate .pagination li.active a{
+  background-color:#d6bf1b !important;
+  border: 1px solid #d6bf1b;
 }

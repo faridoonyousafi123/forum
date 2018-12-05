@@ -15,8 +15,7 @@ class CreateChannelsTable extends Migration
     {
         Schema::create('channels', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('discussion_id')->unsigned();
-
+            // $table->integer('discussion_id')->unsigned();
             $table->string('title');
             $table->timestamps();
         });

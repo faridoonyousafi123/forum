@@ -1447,7 +1447,7 @@ header .form-inline {
   .table-stats table td {
     border: none;
     border-bottom: 1px solid #e8e9ef;
-    color: #868e96;
+    color: white !important;
     font-size: 12px;
     font-weight: normal;
     padding: .75em 1.25em;

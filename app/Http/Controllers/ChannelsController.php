@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Channel;
+use Session;
 
 class ChannelsController extends Controller
 {
@@ -35,7 +36,20 @@ class ChannelsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+
+            'channel' => 'required'
+
+        ]);
+
+        Channel::create([
+
+                'title' => $request->channel
+        ]);
+
+        Session::flash('success','Channel Created');
+
+        return redirect()->route('channels.index');
     }
 
     /**

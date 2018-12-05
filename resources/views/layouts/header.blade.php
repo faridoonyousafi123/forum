@@ -10,10 +10,11 @@
     <meta name="description" content="AfghanYouthDev">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="apple-touch-icon" href="images/logo2.png">
+    <link rel="apple-touch-icon" href="{{asset('images/logo2.png')}}">
     <link rel="shortcut icon" href="images/logo2.png">
-
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link href="{{asset('css/datatables.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -176,8 +177,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./home"><img class="logoDesign" src="images/logo1.png" alt="Logo"><span class="afg">Afg</span><span class="han">han</span><span class="youth">Youth</span><span class="dev">Dev</span></a>
-                    <a class="navbar-brand hidden" href="./"><img class="logoDesign" src="images/logo1.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./home"><img class="logoDesign" src="{{asset('images/logo1.png')}}" alt="Logo"><span class="afg">Afg</span><span class="han">han</span><span class="youth">Youth</span><span class="dev">Dev</span></a>
+                    <a class="navbar-brand hidden" href="./"><img class="logoDesign" src="{{asset('images/logo1.png')}}" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -222,7 +223,7 @@
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="{{asset('images/avatar/1.jpg')}}"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Jonathan Smith</span>
                                         <span class="time float-right">Just now</span>
@@ -230,7 +231,7 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="{{asset('images/avatar/2.jpg')}}"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Jack Sanders</span>
                                         <span class="time float-right">5 minutes ago</span>
@@ -259,7 +260,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{asset('images/admin.jpg')}}">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -314,6 +315,52 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/jszip.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/vfs_fonts.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/datatables.min.js')}}"></script>
+    <script>
+        @if(Session::has('success'))
+            toastr.success("{{Session::get('success')}}")
+        @endif
+         @if(Session::has('info'))
+            toastr.info("{{Session::get('info')}}")
+        @endif
+         @if($errors)
+            <?php
+            foreach ($errors->all() as $error) {
+                ?>
+                toastr.error("{!!$error!!}")
+                <?php
+            }
+            ?>
+
+        @endif
+    </script>
+    
+
+<script>
+
+$(document).ready(function () {
+	$('#dtBasicExample').DataTable({
+		"pagingType": "simple" // "simple" option for 'Previous' and 'Next' buttons only
+	});
+	$('.dataTables_length').addClass('bs-select');
+});
+$(document).ready(function () {
+	$('#dtBasicExample').DataTable();
+	$('.dataTables_length').addClass('bs-select');
+}); 
+</script>
+
 
     <!--Local Stuff-->
     <script>
@@ -507,5 +554,7 @@
             // Bar Chart #flotBarChart End
         });
     </script>
+    
+     
 </body>
 </html>
