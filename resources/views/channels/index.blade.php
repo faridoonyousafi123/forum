@@ -12,7 +12,7 @@
         </div>
             <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Channels</strong>
+                                <strong class="card-title">Channels Index</strong>
                             </div>
                           
                             <div class="table-stats text-left order-table ov-h">
@@ -35,11 +35,17 @@
                                             <td>{{$channel->title}}</td>
 
                                             <td class="text-left">
-                                                <a href = "{{route('channels.edit',['channel'=>$channel->id])}}" ><span class="badge badge-complete"><i class="far fs-10 fa-edit"></i></span></a>
+                                                
+                                            
+                                            <a href = "{{route('channels.edit',['channel'=>$channel->id])}}" ><span class="badge badge-complete"><i class="far fs-10 fa-edit"></i></span></a>
                                             </td>
 
                                             <td>
-                                                <a href = "{{route('channels.destroy',['channel'=>$channel->id])}}" ><span class="badge delete badge-completed"><i class="fas fs-10 fa-trash-alt"></i></span></a>
+                                            <form action="{{route('channels.destroy',['channel'=>$channel->id])}}" method="post">
+                                            {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <button class="btn badge delete badge-completed" type="submit"><i class="fas fs-10 fa-trash-alt"></i></button>
+                                                </form>
                                             </td>
                                             
                                         </tr>

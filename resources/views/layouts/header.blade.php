@@ -111,8 +111,14 @@
                         <a href="{{url('/home')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">UI elements</li><!-- /.menu-title -->
-                    <li>
-                        <a href="{{ url('/channels') }}"> <i class="menu-icon fa fa-rss-square"></i>Channels</a>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rss-square"></i>Channels</a>
+                        <ul class="sub-menu children dropdown-menu">
+                        <li><a href="{{route('channels.index')}}">All Channels</a></li>
+                            @foreach($channels as $channel)
+                            <li><a href="#"">{{$channel->title}}</a></li>
+                            @endforeach
+                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
@@ -553,6 +559,36 @@ $(document).ready(function () {
             });
             // Bar Chart #flotBarChart End
         });
+    </script>
+   <script>
+    $(".btn[data-target='#myModal']").click(function() {
+       var columnHeadings = $("thead th").map(function() {
+                 return $(this).text();
+              }).get();
+       columnHeadings.pop();
+       var columnValues = $(this).parent().siblings().map(function() {
+                 return $(this).text();
+       }).get();
+
+var modalBody = $('<div id="modalContent"></div>');
+var modalForm = $('<form role="form" name="modalForm" action="" method="PUT"></form>');
+
+  $.each(columnHeadings, function(i, columnHeader) {
+    console.log(columnValues[0]);
+    if (columnHeader !== 'Title' && columnHeader !== 'No')
+        return
+       var formGroup = $('<div class="form-group"></div>');
+       formGroup.append('<label for="'+columnHeader+'">'+columnHeader+'</label>');
+       formGroup.append('<input class="form-control" name="'+columnHeader+i+'" id="'+columnHeader+i+'" value="'+columnValues[i]+'" />'); 
+       modalForm.append(formGroup);
+  });
+  
+  modalBody.append(modalForm);
+  $('.modal-body').html(modalBody);
+});
+$('.modal-footer .btn-primary').click(function() {
+   $('form[name="modalForm"]').submit();
+});
     </script>
     
      

@@ -2535,4 +2535,16 @@ footer.site-footer {
 .dataTables_paginate .pagination li.active a{
   background-color:#d6bf1b !important;
   border: 1px solid #d6bf1b;
+  border-radius: 50% !important;
+  font-size: 15px;
+  font-weight: bold;
+}
+.dataTables_paginate .pagination li.active a:hover{
+  background-color: #ffe10a !important;
+  border:1px solid #ffe10a;
+
+}
+.paginate_button{
+  margin-left:10px;
+  margin-right: 10px;
 }
