@@ -2548,3 +2548,48 @@ footer.site-footer {
   margin-left:10px;
   margin-right: 10px;
 }
+.backColor{
+  background-color:#2fb7aa;
+}
+.foreColor{
+  background-color:#2fb7aa !important;
+  color:white;
+}
+.discussion_creater{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.discussion_title{
+  font-size:16px;
+  color:#d6bf1b;
+  font-weight: bold;
+}
+.colorBtn{
+ 
+  background-color: transparent;
+  border-color:transparent;
+  width: 0px;
+  height: 0px;
+  align-items: right;
+  text-align: right;
+}
+.colorBtnShow{
+  display: flex;
+  background-color: #2fb7aa;
+  border-color: #2fb7aa;
+  width: 100%;
+  height: 100%;
+  transition: width 0.5s, height 0.2s, background-color 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);; 
+}
+.colorBtnShow:hover{
+  background-color: #2fb7aa;
+  border-color: #2fb7aa;
+}
+.dis-icon{
+  cursor: pointer;
+  color: #2fb7aa;
+}
+i .dis-icon:hover{
+  background-color: transparent !important;
+}

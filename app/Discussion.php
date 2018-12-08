@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Discussion extends Model
 {
-    protected $fillable = ['title', 'content', 'channel_id','user_id'];
+    protected $fillable = ['title', 'content', 'channel_id','user_id','slug'];
 
     public function channel(){
         return $this->belongsTo('App\Channel');
