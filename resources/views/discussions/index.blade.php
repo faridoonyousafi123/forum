@@ -26,18 +26,23 @@
                       <!-- /Widgets -->
                     @foreach($discussions as $discussion)
                     <div class=" m-t-30 col-lg-3 col-md-6">
-                        <div class="card">
+                        <div class="card sizeChange">
+                        <div class="text-right m-r-5 m-t-5">
+                                             <a><span class="badge dis-icon badge-complete"><i class="fas  noShow fa-pencil-alt"></i></span></a>
+                                            <a><span class="badge dis-icon badge-complete"><i class="fas noShow fa-trash"></i></span></a>
+                                           
+                                     </div>
                             <div class="card-body">
                                 <div  class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-1">
                                        <img id="author" class="discussion_creater" src="{{asset('avatars\admin.jpg')}}"></img>
+                                       
                                     </div>
+                                 
                                     <div class="stat-content">
+                                    
                                         <div class="text-left dib">
-                                            <div class="text-right">
-                                            <a><span class="badge badge-complete"><i class="fas dis-icon fs-20 fa-trash"></i></span></a>
-                                            <a><span class="badge badge-complete"><i class="fas dis-icon fs-20 fa-pen-square"></i></span></a>
-                                            </div>
+                                  
                                             <div class="stat-text"><span class="count discussion_title">{{$discussion->title}}</span> 
                                            </div>
                                             <div class="stat-heading">Channel</div>

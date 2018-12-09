@@ -2590,6 +2590,24 @@ footer.site-footer {
   cursor: pointer;
   color: #2fb7aa;
 }
-i .dis-icon:hover{
-  background-color: transparent !important;
+.dis-icon:hover{
+  background-color: transparent;
+  transform: scale(1.1);
+  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.noShow{
+  font-size:0px;
+
+  transition: font-size 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+}
+
+.show{
+  font-size: 16px;
+
+  transition: font-size 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.sizeChange{
+  height: 200px !important;
 }
