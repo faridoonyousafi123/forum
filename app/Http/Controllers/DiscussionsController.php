@@ -40,4 +40,12 @@ class DiscussionsController extends Controller
 
         return redirect()->route('discussion.index',['slug'=> $discussion->slug]);
     }
+    public function destroy($id){
+
+        Discussion::destroy($id);
+
+        Session::flash('success','Discussion deteled successfully!');
+
+        return redirect()->route('discussion.index');
+    }
 }

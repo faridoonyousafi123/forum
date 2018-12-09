@@ -59,3 +59,8 @@ Route::get('discussion/',[
     'uses' => 'DiscussionsController@index',
     'as' => 'discussion.index'
 ]);
+
+Route::get('discussion/delete/{delete}',[
+    'uses' => 'DiscussionsController@destroy',
+    'as' => 'discussion.destroy'
+]);

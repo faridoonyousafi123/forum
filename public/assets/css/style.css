@@ -2611,3 +2611,11 @@ footer.site-footer {
 .sizeChange{
   height: 200px !important;
 }
+.fa-bookmark{
+  color:#bd0101d4;
+  width: 20px;
+}
+.time-color{
+  color:#9c9d9e;
+}
+
