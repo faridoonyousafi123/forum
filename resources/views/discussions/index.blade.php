@@ -25,7 +25,7 @@
 
                       <!-- /Widgets -->
                     @foreach($discussions as $discussion)
-                    <div class=" m-t-30 col-lg-3 col-md-6">
+                    <div class=" m-t-30 col-lg-6 col-lg-4">
                     
                         <div class="card">
                         <i class="fas fa-bookmark green fs-30"></i>
@@ -54,10 +54,16 @@
                                     </div>
                                 </div>
                                 
-                                <div class="stat-heading fs-12 m-t-30 time-color">{{$discussion->created_at->diffForHumans()}} 
-                                <i class="fas fs-20 m-l-150 fa-comments"></i><span class="m-l-3 stat-heading fs-10 time-color">11</span>
-                                <i class="fas fs-20 m-l-30 fa-thumbs-up"></i><span class="m-l-3 stat-heading fs-10 time-color">11</span>
-                               
+                                <div class="stat-heading fs-12 m-t-30 flex-col-sb time-color">
+                                <div class="text-right">
+                                <i class="fas fs-20 discuss-util fa-comments"></i><span class="m-l-6 stat-heading fs-10 time-color">11</span>
+                                </div>
+
+                                <div class="text-right">
+                                <i class="fas fs-20 discuss-util fa-thumbs-up"></i><span class="m-l-3 stat-heading fs-10 time-color">121</span>
+                                </div>
+                                
+                                {{$discussion->created_at->diffForHumans()}} 
                                 </div> 
                                 
                                 <a href="" id="buttonEnter" class="btn colorBtn btn-success btn-sm flex-c-b m-t-30"><i class="fas fs-20 fa-sign-in-alt"></i></a>
