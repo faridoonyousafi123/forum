@@ -55,12 +55,12 @@ class DiscussionsController extends Controller
     public function edit($id){
         
         
-        return view('discussions.edit')->with('discussions',Discussion::find($id))->with('channels',Channel::all());
+        return view('discussions.edit',['discussion_new' => Discussion::find($id)]);
 
     }
     public function update(Request $request, $id){
         
-        $discussion = Channel::find($id);
+        $discussion = Discussion::find($id);
 
         $this->validate($request, [
 
@@ -77,6 +77,7 @@ class DiscussionsController extends Controller
         $discussion->user_id = Auth::id();
         $discussion->slug = str_slug($request->title);
 
+        $discussion->save();
 
         Session::flash('success', 'Discussion updated Successfully!');
 

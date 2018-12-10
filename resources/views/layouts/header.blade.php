@@ -224,7 +224,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{asset('images/admin.jpg')}}">
+                            <img class="user-avatar rounded-circle" src="{{asset(Auth::user()->avatar)}}">
                         </a>
 
                         <div class="user-menu dropdown-menu">

@@ -12,19 +12,19 @@
                   <div class="card-body">
                      <div class="col-lg-12">
                         <div class="card-body card-block">
-                           <form action="{{route('discussion.update',['id' => $discussions->id])}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                           <form action="{{route('discussion.update',['id' => $discussion_new->id])}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                            {{csrf_field()}}
                            
                             <div class="row form-group">
                                  <div class="col col-md-3"><label for="title" class=" form-control-label">Title</label></div>
-                                 <div class="col-12 col-md-9"><input value="{{$discussions->title}}"name="title" id="title" class="form-control"></input></div>
+                                 <div class="col-12 col-md-9"><input value="{{$discussion_new->title}}"name="title" id="title" class="form-control"></input></div>
                               </div>
 
 
                            <div class="row form-group">
                                  <div class="col col-md-3"><label for="select" class=" form-control-label">Select</label></div>
                                  <div class="col-12 col-md-9">
-                                    <select name="channel_id" id="select" class="form-control" value="{{$discussions->channel->title}}">
+                                    <select name="channel_id" id="select" class="form-control" value="{{$discussion_new->channel->title}}">
                                        @foreach($channels as $channel)
                                        <option value="{{$channel->id}}">{{$channel->title}}</option>
                                        @endforeach
@@ -36,7 +36,7 @@
 
                               <div class="row form-group">
                                  <div class="col col-md-3"><label for="content" class=" form-control-label">Ask a question</label></div>
-                                 <div class="col-12 col-md-9"><textarea name="content" id="textarea-input" rows="9" value="{{$discussions->content}}" placeholder="Content..." class="form-control"></textarea></div>
+                                 <div class="col-12 col-md-9"><textarea name="content" id="textarea-input" rows="9" placeholder="Content..." class="form-control">{{$discussion_new->content}}</textarea></div>
                               </div>
 
 
