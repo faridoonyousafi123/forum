@@ -350,6 +350,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   width: 100%; 
+  overflow-x: hidden !important;
   
   
 }
@@ -2596,18 +2597,19 @@ footer.site-footer {
   transform: scale(1.1);
   transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-.noShow{
-  font-size:0px;
-
-  transition: font-size 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-
+.noShown{
+ display: none;
 }
-
-.show{
+.fadeIn{
+  display: block;
+ 
+  animation: fadeInIcon 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+/* .show{
   font-size: 16px;
 
   transition: font-size 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
+} */
 
 
 .fa-bookmark{
@@ -2648,7 +2650,7 @@ footer.site-footer {
 .effect-show:hover{
   transform: scale(1.01);
   transition: transform 0.3s  cubic-bezier(0.25, 0.1, 0.25, 1);
-  box-shadow: 
+ 
 }
 .colorChange{
   background-color: #2fb7aa !important;
@@ -2676,4 +2678,21 @@ footer.site-footer {
   50%{
     transform: translateX(50px);
   }
- 
+}
+@keyframes fadeInIcon{
+    0%{
+          transform: translateX(0);
+    }
+    10%{
+      transform: translateX(10px);
+    }
+    20%{
+      transform: translateX(20px);
+    }
+    30%{
+      transform: translateX(30px);
+    }
+    50%{
+      transform: translateX(50px);
+    }
+  }

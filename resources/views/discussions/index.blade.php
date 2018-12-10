@@ -25,12 +25,12 @@
          <!-- /Widgets -->
          @foreach($discussions as $discussion)
         
-         <div class="m-t-30 col-lg-6 col-md-6 fadeInEffect effect-show">
+         <div class="m-t-30 col-lg-6 col-md-6 col-sm-12 fadeInEffect effect-show">
             <div class="card shadow-effect">
                <i class="fas fa-bookmark green fs-30"></i>
                <div class="text-right m-r-5 m-t-5">
-                  <a><span class="badge dis-icon badge-complete"><i class="fas  noShow fa-pencil-alt"></i></span></a>
-                  <a href="{{route('discussion.destroy',['id'=>$discussion->id])}}"><span class="badge dis-icon badge-complete"><i class="fas noShow fa-trash"></i></span></a>
+                  <a href="{{route('discussion.edit',['id'=>$discussion->id])}}"><span class="badge dis-icon badge-complete"><i class="fas  noShow fs-16 fa-pencil-alt"></i></span></a>
+                  <a href="{{route('discussion.destroy',['id'=>$discussion->id])}}"><span class="badge dis-icon badge-complete"><i class="fas noShow fs-16 fa-trash"></i></span></a>
                </div>
                
                <div class="card-body arrangePadding">

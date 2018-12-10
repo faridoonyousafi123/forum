@@ -7,6 +7,7 @@ use Auth;
 use Session;
 use App\Users;
 use App\Discussion;
+use App\Channel;
 class DiscussionsController extends Controller
 {
     public function index(){
@@ -49,5 +50,39 @@ class DiscussionsController extends Controller
         Session::flash('success','Discussion deteled successfully!');
 
         return redirect()->route('discussion.index');
+    }
+
+    public function edit($id){
+        
+        
+        return view('discussions.edit')->with('discussions',Discussion::find($id))->with('channels',Channel::all());
+
+    }
+    public function update(Request $request, $id){
+        
+        $discussion = Channel::find($id);
+
+        $this->validate($request, [
+
+            'channel_id' => 'required',
+            'content' => 'required',
+            'title' => 'required'
+
+        ]);
+
+        
+        $discussion->title = $request->title;
+        $discussion->content = $request->content;
+        $discussion->channel_id = $request->channel_id;
+        $discussion->user_id = Auth::id();
+        $discussion->slug = str_slug($request->title);
+
+
+        Session::flash('success', 'Discussion updated Successfully!');
+
+        return redirect()->route('discussion.index');
+
+
+
     }
 }

@@ -69,3 +69,13 @@ Route::get('discussion/{slug}',[
     'uses' => 'DiscussionsController@show',
     'as' => 'discussion.show'
 ]);
+
+Route::get('discussion/edit/{id}',[
+    'uses' => 'DiscussionsController@edit',
+    'as' => 'discussion.edit'
+]);
+
+Route::post('discussion/update/{id}',[
+    'uses' => 'DiscussionsController@update',
+    'as' => 'discussion.update'
+]);
