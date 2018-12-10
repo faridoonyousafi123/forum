@@ -17,7 +17,15 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('admin'),
             'email' => 'faridoon@faridoon.com',
             'admin' => 1,
-            'avatar' => asset('avatars/admin.jpg')
+            'avatar' => 'avatars/admin.jpg'
+        ]);
+
+        App\User::create([
+                
+            'name' => 'faridoon yousafi ',
+            'password' => bcrypt('admin'),
+            'email' => 'faridoon@gmail.com',
+            'avatar' => 'avatars/user.jpg'
         ]);
     }
 }

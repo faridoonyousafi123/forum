@@ -1,21 +1,23 @@
-$(".col-lg-4").mouseenter(function(){
+// $(".effect-show").mouseenter(function(){
     
-    $( this ).find(".colorBtn").addClass("colorBtnShow");
-});
+//     $( this ).find(".colorBtn").addClass("colorBtnShow");
+// });
 
-$(".col-lg-4").mouseleave(function(){
+// $(".effect-show").mouseleave(function(){
     
-    $( this ).find(".colorBtn").removeClass("colorBtnShow");
-});
+//     $( this ).find(".colorBtn").removeClass("colorBtnShow");
+// });
 
-$(".col-lg-4").mouseenter(function(){
+$(".effect-show").mouseenter(function(){
     
     $( this ).find(".noShow").addClass("show");
 });
 
-$(".col-lg-4").mouseleave(function(){
+$(".effect-show").mouseleave(function(){
     
     $( this ).find(".noShow").removeClass("show");
 });
+
+
 
 

@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use App\Users;
 use App\Discussion;
 class DiscussionsController extends Controller
 {
     public function index(){
-        return view('discussions.index')->with('discussions',Discussion::all());
+        $discussions = Discussion::orderBy('created_at','desc')->paginate(4);
+        return view('discussions.index',['discussions' => $discussions]);
     }
     public function create(){
         return view('discussions.create');

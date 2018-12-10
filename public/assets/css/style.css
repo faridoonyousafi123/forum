@@ -351,6 +351,7 @@ body {
   font-size: 16px;
   width: 100%; 
   
+  
 }
 
 p {
@@ -2608,9 +2609,7 @@ footer.site-footer {
   transition: font-size 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.sizeChange{
-  height: 200px !important;
-}
+
 .fa-bookmark{
   color:#bd0101d4;
   width: 20px;
@@ -2621,4 +2620,57 @@ footer.site-footer {
 .discuss-util{
   color:#2fb7aa;
 }
+.sticker{
+  background-color: #0ace9d;
+  width: fit-content;
+  padding-right: 30px;
+  height: 25px;
+  opacity: 0.8;
+  border-radius:30px;
+}
+.sticker-font{
+  color:white !important;
+  font-size: 14px;
+  margin-top: 10px !important;
+  text-align: center;
+}
+.arrangePadding{
+  padding-bottom:10px !important;
+  padding-top: 0px !important;
+}
+.fadeInEffect{
 
+  animation: fadeIn 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.effect-show{
+  cursor: pointer;
+}
+.effect-show:hover{
+  transform: scale(1.01);
+  transition: transform 0.3s  cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: 
+}
+.colorChange{
+  background-color: #2fb7aa !important;
+}
+.arrange-content-padding{
+  padding-top: 30px !important;
+  padding-left:0px !important;
+}
+@keyframes fadeIn{
+  0%{
+        transform: translateX(0);
+  }
+  10%{
+    transform: translateX(10px);
+  }
+  20%{
+    transform: translateX(20px);
+  }
+  30%{
+    transform: translateX(30px);
+  }
+  50%{
+    transform: translateX(50px);
+  }
+ 

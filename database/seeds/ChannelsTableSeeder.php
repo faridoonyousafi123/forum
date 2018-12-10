@@ -12,7 +12,7 @@ class ChannelsTableSeeder extends Seeder
     public function run()
     {
         $channel1 = ['title' => 'Php Testing'];
-        $channel2 = ['title' => 'Php Learning'];
+        $channel2 = ['title' => 'Node Js'];
         $channel3 = ['title' => 'Laravel'];
         $channel4 = ['title' => 'Learn Vue JS'];
         $channel5 = ['title' => 'Python'];

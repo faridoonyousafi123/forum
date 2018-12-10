@@ -64,3 +64,8 @@ Route::get('discussion/delete/{delete}',[
     'uses' => 'DiscussionsController@destroy',
     'as' => 'discussion.destroy'
 ]);
+
+Route::get('discussion/{slug}',[
+    'uses' => 'DiscussionsController@show',
+    'as' => 'discussion.show'
+]);
