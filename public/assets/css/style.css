@@ -2657,6 +2657,9 @@ footer.site-footer {
   padding-top: 30px !important;
   padding-left:0px !important;
 }
+.discuss-content:hover{
+  background-color: #38d0c1;
+}
 @keyframes fadeIn{
   0%{
         transform: translateX(0);

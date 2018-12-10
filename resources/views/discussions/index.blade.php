@@ -20,9 +20,7 @@
    <!-- Animated -->
    <div class="animated fadeIn">
       <!-- Widgets  -->
-      <div class="text-right">
-         {{$discussions->links()}}
-      </div>
+      
       <div class="row">
          <!-- /Widgets -->
          @foreach($discussions as $discussion)
@@ -49,15 +47,16 @@
                            <div class="stat-heading m-b-10">{{str_limit($discussion->channel->title,50)}}
                            </div>
 
-                        <div class="col-lg-12 arrange-content-padding">
+                        <a href="{{route('discussion.show',['slug'=>$discussion->slug])}}"><div class="col-lg-12  col-lg-6 col-md-12 arrange-content-padding">
                         <div class="card bg-warning colorChange">
-                            <div class="card-body">
+                            <div class="card-body discuss-content">
                                 <blockquote class="blockquote mb-0 text-light">
                                     <p class="text-light">{{str_limit($discussion->content,125)}}</p>
-                                    <footer class="blockquote-footer text-light">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                    <footer class="blockquote-footer text-light">By {{$discussion->user->name}}</footer>
                                 </blockquote>
                             </div>
                         </div>
+</a>
                     </div>
                         </div>
                      </div>
@@ -78,6 +77,9 @@
          <!-- /Widgets -->
       </div>
       <!-- .row -->
+      <div class="text-right">
+         {{$discussions->links()}}
+      </div>
    </div>
 </div>
 <!-- /.content -->
