@@ -2667,6 +2667,16 @@ footer.site-footer {
   animation: jiggle 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
   color:#0d5851;
 }
+.nav-item:hover{
+  cursor: pointer;
+  color:#58C9F3 !important;
+}
+.custom-tab .nav-tabs > a.active, .custom-tab .nav-tabs > .active > a:focus, .custom-tab .nav-tabs > li.active > a:hover{
+  cursor: pointer;
+}
+.showComments{
+  content: '+ Show Comments';
+}
 
 @keyframes fadeIn{
   0%{

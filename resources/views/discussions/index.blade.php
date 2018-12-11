@@ -40,6 +40,7 @@
                      </div>
                      
                      <div class="stat-content">
+                     <a href="{{route('discussion.show',['slug'=>$discussion->slug])}}">
                         <div class="text-left dib">
                            <div class="stat-text"><span class="count discussion_title">{{str_limit($discussion->title,30)}}</span> 
                            </div>
@@ -47,7 +48,8 @@
                            <div class="stat-heading m-b-5">{{str_limit($discussion->channel->title,50)}}
                            </div>
 
-                        <a href="{{route('discussion.show',['slug'=>$discussion->slug])}}"><div class="col-lg-12  col-lg-6 col-md-12 arrange-content-padding">
+                        <a href="{{route('discussion.show',['slug'=>$discussion->slug])}}">
+                            <div class="col-lg-12  col-lg-6 col-md-12 arrange-content-padding">
                         <div class="time-color m-l-5 fs-12 m-b-8">
                         <i class="fas fs-14 fa-bullhorn"></i>  {{$discussion->user->name}} 
                         </div>
@@ -60,8 +62,9 @@
                                 </blockquote>
                             </div>
                         </div>
-</a>
+
                     </div>
+</a>
                         </div>
                      </div>
                   </div>

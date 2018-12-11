@@ -9,6 +9,7 @@
     <title>AfghanYouthDev</title>
     <meta name="description" content="AfghanYouthDev">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
  
     <link rel="apple-touch-icon" href="{{asset('images/logo2.png')}}">
     <link rel="shortcut icon" href="{{asset('images/logo2.png')}}">
@@ -29,10 +30,9 @@
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
-   
-
-
    <style>
+       
+   
        @import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
     #weatherWidget .currentDesc {
         color: #ffffff!important;
@@ -118,7 +118,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><a href="{{route('channels.index')}}">All Channels</a></li>
                             @foreach($channels as $channel)
-                            <li><a href="#"">{{$channel->title}}</a></li>
+                            <li><a href="#">{{$channel->title}}</a></li>
                             @endforeach
                          </ul>
                     </li>
@@ -292,6 +292,7 @@
     <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/datatables.min.js')}}"></script>
     <script src="{{asset('js\myownjs.js')}}"></script>
+    
    
     <script>
         @if(Session::has('success'))

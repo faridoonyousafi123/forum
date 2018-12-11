@@ -20,4 +20,14 @@ $(".effect").on("click", function(){
 
 });
 
+$(".nav-item").on("click", function(){
+
+    
+    $( this ).toggleClass("show");
+
+    $(".tab-pane").toggleClass("active");
+    $(".tab-pane").toggleClass("show");
+    $(".commentMessage").html("Show ");
+   
+});
 
