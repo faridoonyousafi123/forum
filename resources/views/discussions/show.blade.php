@@ -61,6 +61,9 @@
                             </div>
                            
                             <footer class="twt-footer">
+                            <span class="pull-right fs-12">
+                            {{$discussion->created_at->diffForHumans()}} 
+                                </span>
                             <div class="row">
                     
 
@@ -71,17 +74,19 @@
 
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item active show nav-link" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true"><h4 class="card-title box-title"><span class="commentMessage">- Hide </span>Comments ({{$discussion->replies->count()}})</h4></a>
+                                                <a class="nav-item active show nav-link" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true"><h4 class="card-title box-title"><span class="showComments"></span>Comments ({{$discussion->replies->count()}})</h4></a>
                                               
                                             </div>
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <div class="tab-pane active show fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
-                                            <div class="card-body">
+                                            <div class="card-body comment-body">
                                 
                                 <div class="card-content">
                                     <div class="messenger-box">
                                         <ul>
+                                            
+                                        
                                         @foreach($discussion->replies as $reply)
                                             <li>
                                             
@@ -114,12 +119,14 @@
                                             @endforeach
                                            
                                         </ul>
-                                        <form action="{{route('discussion.reply',['id' => $discussion->id])}}" method="post">
+                                        <div class="position">
+                                                Write new comment
+                                            <form action="{{route('discussion.reply',['id' => $discussion->id])}}" method="post">
                                             {{csrf_field()}}
 
                                             <div class="send-mgs">
                                             <div class="yourmsg">
-                                                <input class="form-control getinfo" name="content" type="text">
+                                                <input class="form-control getinfo" autofocus name="content" type="text">
                                             </div>
                                             <button type="submit" class="postbutton btn msg-send-btn">
                                                 <i class="pe-7s-paper-plane"></i>
@@ -128,6 +135,8 @@
                                         </div>
 
                                         </form>
+                                            </div>
+                                        
                                         
                                     </div><!-- /.messenger-box -->
                                 </div>

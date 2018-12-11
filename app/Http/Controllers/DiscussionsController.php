@@ -9,6 +9,7 @@ use App\Users;
 use App\Discussion;
 use App\Channel;
 use App\Reply;
+use URL;
 
 class DiscussionsController extends Controller
 {
@@ -107,7 +108,13 @@ class DiscussionsController extends Controller
     
     }
 
-    public function reply($id){
+    public function reply(Request $request, $id){
+        $this->validate($request, [
+
+            'content' => 'required',
+            
+
+        ]);
 
             $discussion = Discussion::find($id);
 
@@ -117,7 +124,7 @@ class DiscussionsController extends Controller
                 'discussion_id' => $id,
                 'content' => request()->content
             ]);
-
+          
             return redirect()->back();
     }
 }

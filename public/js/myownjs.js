@@ -27,7 +27,10 @@ $(".nav-item").on("click", function(){
 
     $(".tab-pane").toggleClass("active");
     $(".tab-pane").toggleClass("show");
-    $(".commentMessage").html("Show ");
+    $(".commentMessage").html("+ Show ");
+    $(".comment-body").fadeToggle("slow","swing");
    
 });
+
+
 
