@@ -2662,18 +2662,27 @@ footer.site-footer {
 .discuss-content:hover{
   background-color: #38d0c1;
 }
+.effect-done{
+
+  animation: jiggle 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  color:#0d5851;
+}
+
 @keyframes fadeIn{
   0%{
         transform: translateX(0);
   }
   10%{
     transform: translateX(10px);
+              
   }
   20%{
     transform: translateX(20px);
+    
   }
   30%{
     transform: translateX(30px);
+    
   }
   50%{
     transform: translateX(50px);
@@ -2694,5 +2703,22 @@ footer.site-footer {
     }
     50%{
       transform: translateX(50px);
+    }
+  }
+  @keyframes jiggle {
+    48%, 62% {
+      transform: scale(1.0, 1.0);
+      transform: rotate(30deg);  
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+      transform: rotate(50deg);  
+    }
+    56% {
+      transform: scale(0.9, 1.5) translate(0, -5px);
+      transform: rotate(100deg);  
+    }
+    59% {
+      transform: scale(1.0, 1.0) translate(0, -3px)
     }
   }

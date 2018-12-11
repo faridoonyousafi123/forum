@@ -14,20 +14,10 @@ $(".effect-show").mouseleave(function(){
     // $( this ).find(".noShown").removeClass("fadeIn");
 });
 
-// $(".effect-show").mouseenter(function(){
-    
-//     $( this ).find(".noShow").addClass("show");
-// });
+$(".effect").on("click", function(){
 
-// $(".effect-show").mouseenter(function(){
-    
-    
-// });
+    $( this ).toggleClass("effect-done");
 
-// $(".effect-show").mouseleave(function(){
-    
-//     $( this ).find(".noShown").removeClass("fadeIn");
-// });
-
+});
 
 

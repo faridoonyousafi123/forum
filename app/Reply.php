@@ -11,4 +11,8 @@ class Reply extends Model
     public function discussion(){
         return $this->belongsTo('App\Discussion');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

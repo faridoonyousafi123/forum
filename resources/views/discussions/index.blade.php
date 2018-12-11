@@ -44,15 +44,19 @@
                            <div class="stat-text"><span class="count discussion_title">{{str_limit($discussion->title,30)}}</span> 
                            </div>
                            
-                           <div class="stat-heading m-b-10">{{str_limit($discussion->channel->title,50)}}
+                           <div class="stat-heading m-b-5">{{str_limit($discussion->channel->title,50)}}
                            </div>
 
                         <a href="{{route('discussion.show',['slug'=>$discussion->slug])}}"><div class="col-lg-12  col-lg-6 col-md-12 arrange-content-padding">
+                        <div class="time-color m-l-5 fs-12 m-b-8">
+                        <i class="fas fs-14 fa-bullhorn"></i>  {{$discussion->user->name}} 
+                        </div>
+                       
                         <div class="card bg-warning colorChange">
                             <div class="card-body discuss-content">
                                 <blockquote class="blockquote mb-0 text-light">
                                     <p class="text-light">{{str_limit($discussion->content,125)}}</p>
-                                    <footer class="blockquote-footer text-light">By {{$discussion->user->name}}</footer>
+                                    
                                 </blockquote>
                             </div>
                         </div>
@@ -61,15 +65,22 @@
                         </div>
                      </div>
                   </div>
-                  <div class="stat-heading fs-12 m-t-30 flex-col-sb time-color">
-                     <div class="text-right">
-                        <i class="fas fs-20 discuss-util fa-comments"></i><span class="m-l-6 stat-heading fs-10 time-color">11</span>
-                        <i class="fas fs-20 discuss-util fa-thumbs-up"></i><span class="m-l-3 stat-heading fs-10 time-color">121</span>
-                     </div>
-                     {{$discussion->created_at->diffForHumans()}} 
-                  </div>
+                  
                  
                </div>
+              
+               <div class="card-footer flex-sb-m  fs-12 m-t-30 time-color">
+                     <div class="text-right">
+                        <i class="fas fs-20 m-l-20 discuss-util fa-comments"></i><span class="m-l-5 stat-heading fs-10 time-color">{{ $discussion->replies->count() }}</span>
+                        <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">121</span>
+                       
+                     </div>
+                     <div class="text-left">
+                        {{$discussion->created_at->diffForHumans()}} 
+                        </div>  
+
+                     
+                  </div>
             </div>
          </div>
         

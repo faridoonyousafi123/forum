@@ -49,7 +49,7 @@ class DiscussionsController extends Controller
 
         Session::flash('success','Discussion deteled successfully!');
 
-        return redirect()->route('discussion.index');
+        return redirect()->back();
     }
 
     public function edit($id){
@@ -85,5 +85,13 @@ class DiscussionsController extends Controller
 
 
 
+    }
+
+    public function show($slug){
+       
+        $discussion = Discussion::where('slug',$slug)->first();
+        
+        return view('discussions.show',['discussion'=> $discussion]);
+    
     }
 }
