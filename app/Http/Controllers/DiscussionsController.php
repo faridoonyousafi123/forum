@@ -8,6 +8,8 @@ use Session;
 use App\Users;
 use App\Discussion;
 use App\Channel;
+use App\Reply;
+
 class DiscussionsController extends Controller
 {
     public function index(){
@@ -88,10 +90,34 @@ class DiscussionsController extends Controller
     }
 
     public function show($slug){
-       
-        $discussion = Discussion::where('slug',$slug)->first();
+
         
-        return view('discussions.show',['discussion'=> $discussion]);
+        $discussion = Discussion::where('slug',$slug)->first();
+        $replies = Reply::where('discussion_id',$discussion->id);
+
+     
+     
+        return view('discussions.show',[
+            'discussion'=> $discussion,
+            'replies' => $replies
+        
+        
+        ]);
+
     
+    }
+
+    public function reply($id){
+
+            $discussion = Discussion::find($id);
+
+            $reply = Reply::create([
+
+                'user_id' => Auth::id(),
+                'discussion_id' => $id,
+                'content' => request()->content
+            ]);
+
+            return redirect()->back();
     }
 }

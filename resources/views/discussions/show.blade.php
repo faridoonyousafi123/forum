@@ -72,34 +72,50 @@
                                     <div class="messenger-box">
                                         <ul>
                                             <li>
+                                            @foreach($discussion->replies as $reply)
                                                 <div class="msg-received msg-container">
                                                     <div class="avatar">
                                                        
-                                                       <img src="" alt="">
+                                                    <img class="m-l-10 rounded-circle mr-3" height="40px" width="40px" src="{{asset($reply->user->avatar)}}" alt=""> 
                                                        <div class="send-time">11.11 am</div>
                                                     </div>
+                                                    <!-- Message box-->
+                                                    
+                                                    
                                                     <div class="msg-box">
+                                                    
                                                         <div class="inner-box">
                                                             <div class="name">
-                                                                John Doe
+                                                              
+                                                            {{$reply->user->name}}
+
                                                             </div>
                                                             <div class="meg">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sunt placeat velit ad reiciendis ipsam
+                                                               {{ $reply->content }}
                                                             </div>
                                                         </div>
                                                     </div>
+                                                   
+                                                    <!-- Message box-->
                                                 </div><!-- /.msg-received -->
                                             </li>
+                                            @endforeach
                                            
                                         </ul>
-                                        <div class="send-mgs">
+                                        <form action="{{route('discussion.reply',['id' => $discussion->id])}}" method="post">
+                                            {{csrf_field()}}
+
+                                            <div class="send-mgs">
                                             <div class="yourmsg">
-                                                <input class="form-control" type="text">
+                                                <input class="form-control" name="content" type="text">
                                             </div>
-                                            <button class="btn msg-send-btn">
+                                            <button type="submit" class="btn msg-send-btn">
                                                 <i class="pe-7s-paper-plane"></i>
                                             </button>
                                         </div>
+
+                                        </form>
+                                        
                                     </div><!-- /.messenger-box -->
                                 </div>
                             </div> <!-- /.card-body -->

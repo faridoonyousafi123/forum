@@ -79,3 +79,8 @@ Route::post('discussion/update/{id}',[
     'uses' => 'DiscussionsController@update',
     'as' => 'discussion.update'
 ]);
+
+Route::post('discussion/reply/{id}',[
+    'uses' => 'DiscussionsController@reply',
+    'as' => 'discussion.reply'
+]);
