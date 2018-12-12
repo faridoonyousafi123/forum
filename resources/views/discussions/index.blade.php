@@ -71,12 +71,14 @@
                   
                  
                </div>
-              
+               
+               
                <div class="card-footer flex-sb-m  fs-12 m-t-30 time-color">
                      <div class="text-right">
                         <i class="fas fs-20 m-l-20 discuss-util fa-comments"></i><span class="m-l-5 stat-heading fs-10 time-color">{{ $discussion->replies->count() }}</span>
-                        <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">121</span>
-                       
+                        <a>
+                            <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">121</span>
+                        </a>
                      </div>
                      <div class="text-left">
                         {{$discussion->created_at->diffForHumans()}} 

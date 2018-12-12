@@ -2673,11 +2673,34 @@ footer.site-footer {
 }
 .custom-tab .nav-tabs > a.active, .custom-tab .nav-tabs > .active > a:focus, .custom-tab .nav-tabs > li.active > a:hover{
   cursor: pointer;
+  color:#878787;
 }
+.samecolor{
+  color:#878787;
+  display: none;
+}
+.effect-comment{
+  display: block;
+  animation: jiggle 0.4s linear;
+}
+.add-comment{
+  background-color: #00aced;
+  height: 100px;
+  width: 200px;
+  border-radius: 50%;
+  color:white;
+}
+
+
 .showComments{
   content: '+ Show Comments';
 }
-
+.in{
+  display:block;
+}
+.out{
+  display: none;
+}
 @keyframes fadeIn{
   0%{
         transform: translateX(0);

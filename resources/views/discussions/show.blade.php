@@ -6,7 +6,7 @@
                 <!-- Widgets  -->
       <div class="row">
          
-      <div class="col-lg-12">
+     
       
            
             
@@ -74,19 +74,29 @@
 
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item active show nav-link" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true"><h4 class="card-title box-title"><span class="showComments"></span>Comments ({{$discussion->replies->count()}})</h4></a>
-                                              
+                                            
+                                            
+                                            <a class="nav-item active show nav-link" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true"><h4 class="card-title box-title"><span class="showComments"></span>Comments ({{$discussion->replies->count()}})</h4></a>
+                                            <i class="far fs-16 fa-comment samecolor"></i>
+
+                                            
                                             </div>
+                                            
+                                            
+                                            
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                            <div class="tab-pane active show fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
+                                            <div class="tab-pane active fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
                                             <div class="card-body comment-body">
                                 
-                                <div class="card-content">
+                                <div class="card-content out">
+                                <button data-scroll-to="#id1"
+        data-scroll-focus="#id2"
+        data-scroll-speed="700"
+        data-scroll-offset="200"  type="button" class="m-b-50 m-l-20 btn new-comment btn-sm btn-outline-success">New Comment</button>
                                     <div class="messenger-box">
-                                        <ul>
-                                            
-                                        
+                                                                          
+                                   
                                         @foreach($discussion->replies as $reply)
                                             <li>
                                             
@@ -94,7 +104,7 @@
                                                     <div class="avatar">
                                                        
                                                     <img class="m-l-10 rounded-circle mr-3" height="40px" width="40px" src="{{asset($reply->user->avatar)}}" alt=""> 
-                                                       <div class="send-time">11.11 am</div>
+                                                       <div class="send-time">{{ $reply->created_at->diffForHumans()}}</div>
                                                     </div>
                                                     <!-- Message box-->
                                                     
@@ -119,6 +129,7 @@
                                             @endforeach
                                            
                                         </ul>
+
                                         <div class="position">
                                                 Write new comment
                                             <form action="{{route('discussion.reply',['id' => $discussion->id])}}" method="post">
@@ -126,8 +137,11 @@
 
                                             <div class="send-mgs">
                                             <div class="yourmsg">
-                                                <input class="form-control getinfo" autofocus name="content" type="text">
+                                            <section id="id1">
+                                                <input class="form-control getinfo" id="id2" name="content" type="text">
+                                                </section>
                                             </div>
+
                                             <button type="submit" class="postbutton btn msg-send-btn">
                                                 <i class="pe-7s-paper-plane"></i>
                                             </button>
@@ -158,5 +172,7 @@
 </div>
 </div>
 </div>
+</div>
+
 @endsection
 
