@@ -2605,11 +2605,11 @@ footer.site-footer {
  
   animation: fadeInIcon 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-/* .show{
-  font-size: 16px;
-
-  transition: font-size 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-} */
+.likeuser{
+  display: flex !important;
+  justify-content: left !important;
+  flex-direction: column !important;
+}
 
 
 .fa-bookmark{
@@ -2709,6 +2709,16 @@ footer.site-footer {
 .out{
   display: none;
 }
+.color{
+  
+  background-color: #58c9f3;
+    color: white;
+    border-radius: 10px;
+    width: 20px;
+    padding: 8px;
+}
+}
+
 
 
 @keyframes fadeIn{

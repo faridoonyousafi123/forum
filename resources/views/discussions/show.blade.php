@@ -38,6 +38,7 @@
                      </li>
                   </ul>
                </div>
+               
                <div class="twt-write col-lg-12">
                   <div class="col-lg-12">
                      <strong class="card-title">{{$discussion->title}}<small><span class="badge badge-success float-right mt-1">Success</span></small></strong>
@@ -46,36 +47,38 @@
                      <p class="card-text">{{ $discussion->content }}</p>
                   </div>
                   <div class="m-l-20 m-b-40 m-t-40 text-left">
-                      <div class="text-left m-b-20 m-t-20">
-                      <i class="far likecolor fa-thumbs-up"></i> <span class="fs-12">
-                      People who liked this 
-                      </span>
-                      </div>
-                       @if($discussion->likes->count() <= 5)
-                  @foreach($likes as $like)
-                        
-                  <img class="align-self-center rounded-circle mr-3" style="width:30px; height:30px;" alt="" src="{{asset($like->user->avatar)}}">
-                  <div>
-                      $like->user->name
-                </div>
-
-                    @endforeach
-                
-                
-               @else
-               @foreach($likes as $like)
-               
-                  <img class="align-self-center rounded-circle mr-3" style="width:30px; height:30px;" alt="" src="{{asset($like->user->avatar)}}">
-                  <div class="where">{{$like->user->name}}</div>
-                    @endforeach
-
-                    <span class="text-left"><span class="fs-12"> and </span> <span class="fs-12">{{$discussion->likes->whereNotIn('id','$like->id')->count()-$likes->count() }} more...</span>
+                     <div class="text-left m-b-20 m-t-20">
+                        <i class="far likecolor fa-thumbs-up"></i> <span class="fs-12">
+                        People who liked this 
+                        </span>
+                     </div>
+                     <div class="text-left">
+                     @if($discussion->likes->count() <= 5)
+                     <div class="liked-users">
+                @foreach($likes as $like)
                     
-                    @endif
+                    <img class="align-self-center rounded-circle mr-3 user-pic" style="width:30px; height:30px;" alt="" src="{{asset($like->user->avatar)}}">
+                   
+                    
                 
-                  
+                
+                
+                @endforeach
+                </div>
+                   
+                @else
+                @foreach($likes as $like)
+                <a>
+                <img class="align-self-center rounded-circle mr-3" style="width:30px; height:30px;" alt="" src="{{asset($like->user->avatar)}}">
+                </a>                    
+                @endforeach
+                <span class="text-left color"><span class="fs-12"></span> <span class="fs-16">+ {{$discussion->likes->whereNotIn('id','$like->id')->count()-$likes->count() }}</span>
+                @endif
+                     </div>
+                    
                   </div>
                </div>
+              
                <footer class="twt-footer">
                   <span class="pull-right fs-12">
                   {{$discussion->created_at->diffForHumans()}} 
@@ -155,8 +158,10 @@
       </div>
       </footer>
       </section>
+      
    </div>
 </div>
 </div>
 </div>
+
 @endsection

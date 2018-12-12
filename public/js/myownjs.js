@@ -48,8 +48,6 @@ $("[data-scroll-to]").click(function() {
         
         if ($focusElement) $($focusElement).focus();
 });
-
-
     
 
 
