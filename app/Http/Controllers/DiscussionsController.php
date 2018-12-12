@@ -10,6 +10,7 @@ use App\Discussion;
 use App\Channel;
 use App\Reply;
 use URL;
+use App\Like;
 
 class DiscussionsController extends Controller
 {
@@ -95,15 +96,23 @@ class DiscussionsController extends Controller
         
         $discussion = Discussion::where('slug',$slug)->first();
         $replies = Reply::where('discussion_id',$discussion->id);
-
-     
+       
+        $likes = Like::where('discussion_id',$discussion->id)->take(5)->get();
+        
+        
+        
      
         return view('discussions.show',[
             'discussion'=> $discussion,
-            'replies' => $replies
+            'replies' => $replies,
+            'likes' => $likes
+            
+            
         
         
         ]);
+
+    
 
     
     }
@@ -124,6 +133,7 @@ class DiscussionsController extends Controller
                 'discussion_id' => $id,
                 'content' => request()->content
             ]);
+            
           
             return redirect()->back();
     }

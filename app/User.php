@@ -34,4 +34,8 @@ class User extends Authenticatable
     public function replies(){
         return $this->hasMany('App\Reply');
     }
+
+    public function likes(){
+        return $this->hasMany('App\Like');
+    }
 }

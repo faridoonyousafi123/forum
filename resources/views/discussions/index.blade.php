@@ -77,7 +77,7 @@
                      <div class="text-right">
                         <i class="fas fs-20 m-l-20 discuss-util fa-comments"></i><span class="m-l-5 stat-heading fs-10 time-color">{{ $discussion->replies->count() }}</span>
                         <a>
-                            <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">121</span>
+                            <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">{{$discussion->likes->count()}}</span>
                         </a>
                      </div>
                      <div class="text-left">
