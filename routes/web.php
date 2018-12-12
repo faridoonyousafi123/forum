@@ -84,3 +84,15 @@ Route::post('discussion/reply/{id}',[
     'uses' => 'DiscussionsController@reply',
     'as' => 'discussion.reply'
 ]);
+
+//likes
+
+Route::post('discussions/{id}',[
+    'uses' => 'LikeController@create',
+    'as' => 'like.create'
+]);
+
+Route::post('discussions/dislike/{id}',[
+    'uses' => 'LikeController@dislike',
+    'as' => 'like.dislike'
+]);

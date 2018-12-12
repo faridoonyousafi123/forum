@@ -71,14 +71,18 @@
                   
                  
                </div>
-               
-               
+               @if($discussion->is_liked_by_auth_user())
+
+                <form action="{{route('like.dislike',['id'=>$discussion->id])}}" method="post">
                <div class="card-footer flex-sb-m  fs-12 m-t-30 time-color">
                      <div class="text-right">
                         <i class="fas fs-20 m-l-20 discuss-util fa-comments"></i><span class="m-l-5 stat-heading fs-10 time-color">{{ $discussion->replies->count() }}</span>
-                        <a>
-                            <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">{{$discussion->likes->count()}}</span>
-                        </a>
+                        
+                            {{csrf_field()}}
+                        <button type="submit">
+                            <i class="fas fs-20 m-l-20 discuss-util effect effect-done dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">{{$discussion->likes->count()}}</span>
+                        </button>
+                        </form>
                      </div>
                      <div class="text-left">
                         {{$discussion->created_at->diffForHumans()}} 
@@ -87,6 +91,33 @@
                      
                   </div>
             </div>
+
+
+
+                @else
+
+                    <form action="{{route('like.create',['id'=>$discussion->id])}}" method="post">
+               <div class="card-footer flex-sb-m  fs-12 m-t-30 time-color">
+                     <div class="text-right">
+                        <i class="fas fs-20 m-l-20 discuss-util fa-comments"></i><span class="m-l-5 stat-heading fs-10 time-color">{{ $discussion->replies->count() }}</span>
+                        
+                            {{csrf_field()}}
+                        <button type="submit">
+                            <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">{{$discussion->likes->count()}}</span>
+                        </button>
+                        </form>
+                     </div>
+                     <div class="text-left">
+                        {{$discussion->created_at->diffForHumans()}} 
+                        </div>  
+
+                     
+                  </div>
+            </div>
+
+
+               @endif
+               
          </div>
         
          @endforeach
