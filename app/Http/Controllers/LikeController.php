@@ -12,13 +12,14 @@ class LikeController extends Controller
 
         $discussion = Discussion::find($id);
 
-        Like::create([
+        $create = Like::create([
             'user_id' => Auth::id(),
             'discussion_id' => $discussion->id,
 
         ]);
 
         return redirect()->back();
+        
     }
 
     public function dislike($id){

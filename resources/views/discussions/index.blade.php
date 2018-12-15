@@ -102,7 +102,7 @@
                         <i class="fas fs-20 m-l-20 discuss-util fa-comments"></i><span class="m-l-5 stat-heading fs-10 time-color">{{ $discussion->replies->count() }}</span>
                         
                             {{csrf_field()}}
-                        <button type="submit">
+                        <button type="submit" id="btn">
                             <i class="fas fs-20 m-l-20 discuss-util effect dis-icon fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-10 time-color">{{$discussion->likes->count()}}</span>
                         </button>
                         </form>

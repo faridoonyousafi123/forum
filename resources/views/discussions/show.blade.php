@@ -18,7 +18,7 @@
                      </a>
                      <div class="media-body">
                         <h2 class="text-white display-6">{{ $discussion->user->name }}</h2>
-                        <p class="text-light">Software Developer at Netlinks</p>
+                        <p class="text-light">{{$discussion->user->profile->title}} at {{$discussion->user->profile->company}}</p>
                      </div>
                   </div>
                </div>
@@ -72,7 +72,7 @@
                 <img class="align-self-center rounded-circle mr-3" style="width:30px; height:30px;" alt="" src="{{asset($like->user->avatar)}}">
                 </a>                    
                 @endforeach
-                <span class="text-left color"><span class="fs-12"></span> <span class="fs-16">+ {{$discussion->likes->whereNotIn('id','$like->id')->count()-$likes->count() }}</span>
+                <span class="text-left color"><span class="fs-12"></span> <span class="fs-14">+{{$discussion->likes->whereNotIn('id','$like->id')->count()-$likes->count() }}</span>
                 @endif
                      </div>
                     
@@ -94,10 +94,10 @@
                                  <i class="far fs-16 fa-comment samecolor"></i>
                               </div>
                            </nav>
-                           <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                              <div class="tab-pane active fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
+                           <div class="tab-content show active pl-3 pt-2" id="nav-tabContent">
+                              <div class="tab-pane show active fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
                                  <div class="card-body comment-body">
-                                    <div class="card-content out">
+                                    <div class="card-content">
                                        <button data-scroll-to="#id1"
                                           data-scroll-focus="#id2"
                                           data-scroll-speed="700"

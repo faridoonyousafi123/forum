@@ -2713,10 +2713,64 @@ footer.site-footer {
   
   background-color: #58c9f3;
     color: white;
-    border-radius: 10px;
+    border-radius: 60px;
     width: 20px;
     padding: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
+.grey-bg{
+  background-color: #20c997;
+}
+.no-margin{
+  margin-bottom:0px !important;
+}
+.rotate-effect{
+  padding-left:10px !important;
+}
+.rotate-effect:hover{
+  cursor: pointer;
+  animation: rotate 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+}
+
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  10%{
+    transform: rotate(50deg);
+  }
+  20%{
+    transform: rotate(70deg);
+  }
+  30%{
+    transform: rotate(100deg);
+  }
+  40%{
+    transform: rotate(130deg);
+  }
+  50%{
+    transform: rotate(170deg);
+  }
+  60%{
+    transform: rotate(200deg);
+  }
+  70%{
+    transform: rotate(230deg);
+  }
+  80%{
+    transform: rotate(270deg);
+  }
+  90%{
+    transform: rotate(320deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
 
 
 
@@ -2775,3 +2829,4 @@ footer.site-footer {
       transform: scale(1.0, 1.0) translate(0, -3px)
     }
   }
+ 
