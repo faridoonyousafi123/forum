@@ -98,6 +98,13 @@ Route::group(['middleware'=>'auth'], function(){
         'uses' => 'ProfilesController@index',
         'as' => 'profile.index'
     ]);
+
+    //Following and followers
+
+    Route::get('profile/follow/{id}',[
+        'uses' => 'ProfilesController@following',
+        'as' => 'user.follow'
+    ]);
        
     
 

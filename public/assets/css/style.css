@@ -1603,6 +1603,7 @@ header .form-inline {
   padding: 10px 0 0 35px;
   color: #fff; }
 
+
 .twt-feed .wtt-mark {
   color: rgba(255, 255, 255, 0.15);
   font-size: 160px;
@@ -1615,7 +1616,8 @@ header .form-inline {
   color: #FFFFFF;
   padding: 40px 10px 10px;
   position: relative;
-  min-height: 170px; }
+  min-height: 210px; 
+height: 210px !important;}
 
 .weather-category {
   padding: 15px 0;
@@ -2733,6 +2735,15 @@ footer.site-footer {
   animation: rotate 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   
 }
+.hover-effect{
+
+  height: 60px;
+  cursor: pointer;
+}
+.hover-effect:hover{
+
+  color: #20c997;
+}
 
 
 @keyframes rotate{
@@ -2829,4 +2840,4 @@ footer.site-footer {
       transform: scale(1.0, 1.0) translate(0, -3px)
     }
   }
- 
+

@@ -10,15 +10,25 @@
                <div class="twt-feed blue-bg">
                   <div class="corner-ribon black-ribon">
                      <i class="fas fa-bullhorn"></i>
+                     <a href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Following</a>
                   </div>
                   <div class="fas fa-bullhorn wtt-mark"></div>
                   <div class="media">
                      <a href="#">
                      <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset($discussion->user->avatar) }}">
                      </a>
+                     
                      <div class="media-body">
                         <h2 class="text-white display-6">{{ $discussion->user->name }}</h2>
-                        <p class="text-light">{{$discussion->user->profile->title}} at {{$discussion->user->profile->company}}</p>
+                        <!-- <p class="text-light">{{$discussion->user->profile->title}} at {{$discussion->user->profile->company}}</p> -->
+                        <p class="text-light no-margin m-t-10 fs-14"><i class="fa fs-12 fa-suitcase m-r-10"></i>{{$discussion->user->profile->title}} </p>
+                        <p class="text-light no-margin fs-14"><i class="fa fs-12 fa-building m-r-10"></i>{{$discussion->user->profile->company}} </p>
+                        <p class="text-light no-margin fs-14"><i class="fa fs-12 fa-map-marked-alt m-r-10"></i>{{$discussion->user->profile->city}}, {{$discussion->user->profile->country}} </p>
+                                <div class="text-left">       
+                               <a href="{{$discussion->user->profile->facebook}}"> <i class="rotate-effect text-white fab m-t-10 fa-facebook-f"></i></a>
+                                <i class="rotate-effect fab m-t-10 text-white fa-twitter"></i>
+                                <i class="rotate-effect fab m-t-10 text-white fa-github"></i>
+</div>
                      </div>
                   </div>
                </div>
