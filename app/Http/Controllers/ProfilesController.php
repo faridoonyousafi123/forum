@@ -24,7 +24,11 @@ class ProfilesController extends Controller
         
         Auth::user()->following()->attach($user);
 
+        return redirect()->back();
+
 
     }
+
+    
 
 }

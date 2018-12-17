@@ -41,6 +41,9 @@ $(".showdiscussion").on("click", function(){
 
     $(".tab-pane2").removeClass("active");
     $(".tab-pane2").removeClass("show");
+
+    $(".tab-pane3").removeClass("active");
+    $(".tab-pane3").removeClass("show");
  
 });
 
@@ -51,10 +54,30 @@ $(".showfollowing").on("click", function(){
 
     $(".tab-pane1").removeClass("active");
     $(".tab-pane1").removeClass("show");
+
+    $(".tab-pane3").removeClass("active");
+    $(".tab-pane3").removeClass("show");
   
   
 
 });
+
+
+$(".showfollowers").on("click", function(){
+
+    $(".tab-pane3").addClass("show");
+    $(".tab-pane3").addClass("active");
+
+    $(".tab-pane1").removeClass("active");
+    $(".tab-pane1").removeClass("show");
+
+    $(".tab-pane2").removeClass("active");
+    $(".tab-pane2").removeClass("show");
+  
+  
+
+});
+
 
 //scrolling to comment inputbox
 $("[data-scroll-to]").click(function() {
