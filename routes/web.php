@@ -105,6 +105,12 @@ Route::group(['middleware'=>'auth'], function(){
         'uses' => 'ProfilesController@following',
         'as' => 'user.follow'
     ]);
+
+    Route::get('profile/unfollow/{id}',[
+        'uses' => 'ProfilesController@unfollowing',
+        'as' => 'user.unfollow'
+    ]);
+       
        
     
 

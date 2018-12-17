@@ -18,6 +18,7 @@ Googel Fonts  */
 /* Googel Fonts End  
 
 */
+@import url('https://fonts.googleapis.com/css?family=BenchNine');
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 .bg-flat-color-1 {
   background: #00c292; }
@@ -2744,7 +2745,65 @@ footer.site-footer {
 
   color: #20c997;
 }
+.follow-btn{
+  color:white;
+  border-color: white;
+  font-family: 'BenchNine', sans-serif;
+  letter-spacing: 1px;
+}
+.rounded{
+  border-radius: 50% !important;
+}
 
+.card1 {
+  background: #fff url("https://storage.googleapis.com/chydlx/codepen/minimalist-profile-card/card-bg.jpg") top -10% center no-repeat;
+  background-size: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px -5px rgba(60, 60, 60, 0.2);
+  text-align: center;
+  padding: 30px 60px;
+}
+.card1 img {
+  background-color: #dddfe6;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: auto auto 15px;
+  display: block;
+}
+.card1 h1 {
+  font-size: 22px;
+  margin: 10px auto 0;
+  letter-spacing: 1px;
+}
+.card1 h2 {
+  margin: auto;
+  color: #b1b6c6;
+  font-weight: 300;
+  font-size: 14px;
+}
+.card1 .button {
+  display: block;
+  text-decoration: none;
+  background: #3b70fc;
+  color: #f9f9f9;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 200px;
+  transition: 0.2s;
+}
+.card1 .button span {
+  font-size: 20px;
+  line-height: 1;
+  vertical-align: top;
+}
+.card1 .button:hover {
+  background: #1856fb;
+}
 
 @keyframes rotate{
   0%{

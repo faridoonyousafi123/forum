@@ -8,6 +8,7 @@
          <div class="col-lg-12 col-md-6 col-sm-6 m-t-20">
             <section class="card-body">
                <div class="twt-feed grey-bg">
+               
                   <div class="fa fa-user wtt-mark"></div>
                   <div class="media">
                      <a href="#">
@@ -34,12 +35,12 @@
                         <i class="far fa-comment-alt"></i> Discussions
                      </li>
                      <li class="hover-effect showfollowing">
-                        <h5>865</h5>
+                        <h5>{{Auth::user()->followers->count()}}</h5>
                         <i class="fas fa-arrow-down"></i>
                          Followers
                      </li>
                      <li class="hover-effect showfollowers">
-                        <h5>3645</h5>
+                        <h5>{{Auth::user()->following->count()}}</h5>
                         <i class="fas fa-arrow-up"></i> Followings
                      </li>
                   </ul>
@@ -86,24 +87,13 @@
                                  <div class="messenger-box">
                                     <div class="row">
                                        @foreach(Auth::user()->followers as $f)
-                                       <div class="col-lg-3 col-md-6">
-                                       <div class="card">
-                           
-                            <div class="card-body">
-                                <div class="mx-auto d-block">
-                                    <img class="rounded-circle mx-auto d-block" src="{{asset('images/admin.jpg')}}" alt="Card image cap">
-                                    <h5 class="text-sm-center mt-2 mb-1">{{$f->name}}</h5>
-                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div>
-                                </div>
-                                <hr>
-                                <div class="card-text text-sm-center">
-                                    <a href="#"><i class="fa fa-facebook pr-1"></i></a>
-                                    <a href="#"><i class="fa fa-twitter pr-1"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                                       <div class="col-lg-3 rounded col-md-6">
+                                       <div class="card1">
+		<img src="{{asset($f->avatar)}}" alt="Chyno Deluxe">
+		<h1>{{$f->name}}</h1>
+		<h2>{{$f->profile->title}}</h2>
+		<a class="button btn btn-sm" href="https://instagram.com/chynodeluxe" target="_blank"><span>+</span> Follow</a>
+	</div>
                                        </div>
                                        @endforeach
                                     </div>
@@ -126,22 +116,22 @@
                                  <div class="messenger-box">
                                     <div class="row">
                                        @foreach(Auth::user()->following as $f)
-                                       <div class="col-lg-3 col-md-6">
+                                       <div class="col-lg-2 rounded col-md-6">
                                        <div class="card">
                            
                             <div class="card-body">
                                 <div class="mx-auto d-block">
-                                    <img class="rounded-circle mx-auto d-block" src="{{asset('images/admin.jpg')}}" alt="Card image cap">
+                                    <img class="rounded-circle mx-auto d-block" height="40px" width="40px" src="{{asset($f->avatar)}}" alt="Card image cap">
                                     <h5 class="text-sm-center mt-2 mb-1">{{$f->name}}</h5>
-                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div>
+                                    <!-- <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div> -->
                                 </div>
-                                <hr>
-                                <div class="card-text text-sm-center">
+                                
+                                <!-- <div class="card-text text-sm-center">
                                     <a href="#"><i class="fa fa-facebook pr-1"></i></a>
                                     <a href="#"><i class="fa fa-twitter pr-1"></i></a>
                                     <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
                                     <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                                        </div>

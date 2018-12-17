@@ -8,13 +8,24 @@
          <div class="col-lg-12 m-t-20">
             <section class="card">
                <div class="twt-feed blue-bg">
-                  <div class="corner-ribon black-ribon">
-                     <i class="fas fa-bullhorn"></i>
-                     <a href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Following</a>
-                  </div>
+               <div class="m-t-10 corner-ribon black-ribon m-r-10">
+                   @if(Auth::user()->following->where('following_id',$discussion->user->id)->where('follower_id',Auth::user()->id))
+                                 
+                   <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Follow</a>
+
+                    @else
+
+              
+                <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.unfollow',['user_id'=>$discussion->user->id])}}">Following</a>
+                    @endif
+                      
+                    </div>
+                
+                 
                   <div class="fas fa-bullhorn wtt-mark"></div>
                   <div class="media">
-                     <a href="#">
+                  
+                     
                      <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset($discussion->user->avatar) }}">
                      </a>
                      
@@ -28,6 +39,9 @@
                                <a href="{{$discussion->user->profile->facebook}}"> <i class="rotate-effect text-white fab m-t-10 fa-facebook-f"></i></a>
                                 <i class="rotate-effect fab m-t-10 text-white fa-twitter"></i>
                                 <i class="rotate-effect fab m-t-10 text-white fa-github"></i>
+                                <i class="rotate-effect fab m-t-10 text-white fa-linkedin-in"></i>
+                        
+                        
 </div>
                      </div>
                   </div>
