@@ -56,6 +56,28 @@ class User extends Authenticatable
         return $this->belongsToMany('App\User', 'followers', 'following_id', 'follower_id');
     }
 
+
+    public function is_followed_by_auth_user(){
+
+        $id = Auth::id();
+        
+        $followers = array();
+
+        foreach ($this->followers as $follower) {
+            
+            array_push($followers, $follower->id );
+        }
+
+    if(in_array($id, $followers))
+    {
+        return true;
+    }
+    else{
+
+        return false;
+    }
+
+    }
     
 
 }

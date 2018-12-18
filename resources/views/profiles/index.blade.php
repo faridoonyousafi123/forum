@@ -48,7 +48,7 @@
                <div class="col-lg-12">
                   <div class="custom-tab">
                      <div class="tab-content show active pl-3 pt-2" id="nav-tabContent">
-                        <div class="tab-pane tab-pane1 active fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
+                        <div class="tab-pane tab-pane1 fadeup active fade" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
                            <div class="card-body comment-body">
                               <div class="card-content">
                                  <div class="messenger-box">
@@ -89,7 +89,7 @@
                                        @foreach(Auth::user()->followers as $f)
                                        <div class="col-lg-3 rounded col-md-6">
                                        <div class="card1">
-		<img src="{{asset($f->avatar)}}" alt="Chyno Deluxe">
+      <img src="{{asset($f->avatar)}}" height="40px" width="40px" alt="Chyno Deluxe">
 		<h1>{{$f->name}}</h1>
 		<h2>{{$f->profile->title}}</h2>
 		<a class="button btn btn-sm" href="https://instagram.com/chynodeluxe" target="_blank"><span>+</span> Follow</a>
@@ -115,25 +115,14 @@
                               <div class="card-content">
                                  <div class="messenger-box">
                                     <div class="row">
-                                       @foreach(Auth::user()->following as $f)
-                                       <div class="col-lg-2 rounded col-md-6">
-                                       <div class="card">
-                           
-                            <div class="card-body">
-                                <div class="mx-auto d-block">
-                                    <img class="rounded-circle mx-auto d-block" height="40px" width="40px" src="{{asset($f->avatar)}}" alt="Card image cap">
-                                    <h5 class="text-sm-center mt-2 mb-1">{{$f->name}}</h5>
-                                    <!-- <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div> -->
-                                </div>
-                                
-                                <!-- <div class="card-text text-sm-center">
-                                    <a href="#"><i class="fa fa-facebook pr-1"></i></a>
-                                    <a href="#"><i class="fa fa-twitter pr-1"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                </div> -->
-                            </div>
-                        </div>
+                                    @foreach(Auth::user()->following as $f)
+                                       <div class="col-lg-3 rounded col-md-6">
+                                       <div class="card1">
+      <img src="{{asset($f->avatar)}}" height="40px" width="40px" alt="Chyno Deluxe">
+		<h1>{{$f->name}}</h1>
+		<h2>{{$f->profile->title}}</h2>
+		<a class="button btn btn-sm" href="https://instagram.com/chynodeluxe" target="_blank"><span>+</span> Follow</a>
+	</div>
                                        </div>
                                        @endforeach
                                     </div>

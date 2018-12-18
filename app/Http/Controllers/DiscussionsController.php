@@ -96,17 +96,18 @@ class DiscussionsController extends Controller
         
         $discussion = Discussion::where('slug',$slug)->first();
         $replies = Reply::where('discussion_id',$discussion->id);
-       
+        $user_followers = $discussion->user->followers()->get();
         $likes = Like::where('discussion_id',$discussion->id)->take(5)->get();
         
         
+        // dd($user_followers);
         
      
         return view('discussions.show',[
             'discussion'=> $discussion,
             'replies' => $replies,
-            'likes' => $likes
-            
+            'likes' => $likes,
+            'user_followers' => $user_followers
             
         
         

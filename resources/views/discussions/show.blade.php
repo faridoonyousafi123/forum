@@ -9,16 +9,33 @@
             <section class="card">
                <div class="twt-feed blue-bg">
                <div class="m-t-10 corner-ribon black-ribon m-r-10">
-                   @if(Auth::user()->following->where('following_id',$discussion->user->id)->where('follower_id',Auth::user()->id))
-                                 
-                   <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Follow</a>
+                  
+        
 
-                    @else
+                  @if($discussion->user->is_followed_by_auth_user())
 
-              
-                <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.unfollow',['user_id'=>$discussion->user->id])}}">Following</a>
-                    @endif
-                      
+                      <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.unfollow',['user_id'=>$discussion->user->id])}}">Following</a>
+
+                  @else
+
+
+
+               <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Follow</a>
+
+               @endif
+
+                
+
+                
+                  
+                    
+
+                  
+                 
+                    
+                 
+                   
+                   
                     </div>
                 
                  

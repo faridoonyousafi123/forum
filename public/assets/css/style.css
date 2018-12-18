@@ -2804,7 +2804,10 @@ footer.site-footer {
 .card1 .button:hover {
   background: #1856fb;
 }
-
+.fadeup{
+  animation: fadeup 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+}
 @keyframes rotate{
   0%{
     transform: rotate(0deg);
@@ -2841,6 +2844,27 @@ footer.site-footer {
   }
 }
 
+@keyframes fadeup{
+  0%{
+    transform: translateY(0);
+}
+10%{
+transform: translateY(10px);
+          
+}
+20%{
+transform: translateY(20px);
+
+}
+30%{
+transform: translateY(30px);
+
+}
+50%{
+transform: translateY(50px);
+}
+}
+}
 
 
 

@@ -37,7 +37,10 @@ $(".nav-item").on("click", function(){
 $(".showdiscussion").on("click", function(){
 
     $(".tab-pane1").addClass("show");
+    $(".tab-pane1").addClass("fadeup");
     $(".tab-pane1").addClass("active");
+
+   
 
     $(".tab-pane2").removeClass("active");
     $(".tab-pane2").removeClass("show");
@@ -51,6 +54,8 @@ $(".showfollowing").on("click", function(){
 
     $(".tab-pane2").addClass("show");
     $(".tab-pane2").addClass("active");
+
+    $(".tab-pane2").addClass("fadeup");
 
     $(".tab-pane1").removeClass("active");
     $(".tab-pane1").removeClass("show");
@@ -67,6 +72,8 @@ $(".showfollowers").on("click", function(){
 
     $(".tab-pane3").addClass("show");
     $(".tab-pane3").addClass("active");
+
+    $(".tab-pane3").addClass("fadeup");
 
     $(".tab-pane1").removeClass("active");
     $(".tab-pane1").removeClass("show");
