@@ -16,8 +16,10 @@
 
                       <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.unfollow',['user_id'=>$discussion->user->id])}}">Following</a>
 
-                  @else
+                  @elseif($discussion->user->id == Auth::user()->id)
 
+               <a></a>
+                  @else
 
 
                <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Follow</a>
@@ -63,24 +65,24 @@
                      </div>
                   </div>
                </div>
-               <div class="weather-category twt-category">
+               <!-- <div class="weather-category twt-category">
                   <ul>
                      <li class="active">
                         <h5>{{$discussion->where('user_id',$discussion->user->id)->count()}}</h5>
                         Discussion
                      </li>
                      <li>
-                        <h5>865</h5>
+                        <h5>{{$discussion->user->following->count()}}</h5>
                         Following
                      </li>
                      <li>
-                        <h5>3645</h5>
+                        <h5>{{$discussion->user->followers->count()}}</h5>
                         Followers
                      </li>
                   </ul>
-               </div>
+               </div> -->
                
-               <div class="twt-write col-lg-12">
+               <div class="twt-write m-t-20 col-lg-12">
                   <div class="col-lg-12">
                      <strong class="card-title">{{$discussion->title}}<small><span class="badge badge-success float-right mt-1">Success</span></small></strong>
                   </div>

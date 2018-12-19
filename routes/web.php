@@ -92,11 +92,18 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'like.dislike'
     ]);
 
-    //Profile
+    //Auth::user Profile
 
     Route::get('profile/{slug}',[
         'uses' => 'ProfilesController@index',
         'as' => 'profile.index'
+    ]);
+
+    //user profile
+
+    Route::get('profile/user/{slug}',[
+        'uses' => 'ProfilesController@userProfile',
+        'as' => 'profile.user'
     ]);
 
     //Following and followers

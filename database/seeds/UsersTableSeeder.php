@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Siawash Kasra',
             'password' => bcrypt('admin'),
             'email' => 'siawash@siawash.com',
-            'slug' => str_slug('Adam Smith'),
+            'slug' => str_slug('Siawash Kasra'),
             'avatar' => 'avatars/user3.jpg'
         ]);
 

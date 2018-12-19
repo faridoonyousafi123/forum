@@ -12,8 +12,9 @@ class ProfilesController extends Controller
 {
     public function index(){
 
-        
-        return view('profiles.index')->with('users',User::all());
+        $users = User::orderBy('created_at','desc')->paginate(6);
+        return view('profiles.index')->with('users', $users);
+       
 
 
     }
@@ -42,6 +43,15 @@ class ProfilesController extends Controller
         return redirect()->back();
 
 
+    }
+
+    public function userProfile($slug){
+
+        $user1 = User::where('slug',$slug)->first();
+
+        // dd($user1);
+
+         return view('profiles.user',['user' => $user1]);
     }
 
     
