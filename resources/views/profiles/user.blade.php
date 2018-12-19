@@ -48,17 +48,21 @@
                   </div>
                </div>
                <div class="weather-category twt-category">
-                  <ul>
-                     <li class="hover-effect showdiscussion">
+               <ul>
+                  <li class="hover-effect tab-size showaboutme">
+                     <h5><i class="far fa-address-card"></i> </h5>
+                     About
+                     </li>
+                     <li class="hover-effect tab-size showdiscussion">
                         <h5>{{$user->discussions->count()}}</h5>
                         <i class="far fa-comment-alt"></i> Discussions
                      </li>
-                     <li class="hover-effect showfollowing">
+                     <li class="hover-effect tab-size showfollowing">
                         <h5>{{$user->followers->count()}}</h5>
                         <i class="fas fa-arrow-down"></i>
                          Followers
                      </li>
-                     <li class="hover-effect showfollowers">
+                     <li class="hover-effect tab-size showfollowers">
                         <h5>{{$user->following->count()}}</h5>
                         <i class="fas fa-arrow-up"></i> Followings
                      </li>

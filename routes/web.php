@@ -92,6 +92,8 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'like.dislike'
     ]);
 
+    //// Profile
+
     //Auth::user Profile
 
     Route::get('profile/{slug}',[
@@ -106,6 +108,8 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'profile.user'
     ]);
 
+
+
     //Following and followers
 
     Route::get('profile/follow/{id}',[
@@ -118,7 +122,12 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'user.unfollow'
     ]);
        
-       
+
+    // edit profile
+    Route::get('profile/edit/{slug}',[
+        'uses' => 'ProfilesController@userProfileEdit',
+        'as' => 'profile.edit'
+    ]);
     
 
 });

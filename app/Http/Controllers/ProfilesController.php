@@ -54,6 +54,20 @@ class ProfilesController extends Controller
          return view('profiles.user',['user' => $user1]);
     }
 
+    public function userProfileEdit($slug){
+
+        $user1 = User::where('slug',$slug)->first();
+
+        // dd($user1);
+
+         return view('profiles.edit',['user' => $user1]);
+
+    }
+
+    public function update(Request $request){
+
+
+    }
     
 
 }

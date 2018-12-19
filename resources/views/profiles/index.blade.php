@@ -8,11 +8,22 @@
          <div class="col-lg-12 col-md-6 col-sm-6 m-t-20">
             <section class="card-body">
                <div class="twt-feed grey-bg">
+               <div class="m-t-10 corner-ribon black-ribon m-r-10">
+                  
+        
+
+                  
+                  <a href="{{route('profile.edit',['slug' => Auth::user()->slug])}} "class="no-hover-background"><span class="hov-pointer no-hover-background badge badge-complete"><i class="far fs-16 fa-edit no-hover-background"></i></span></a>
+                 
+
+
+             
+                    </div>
                
                   <div class="fa fa-user wtt-mark"></div>
                   <div class="media">
                      <a href="#">
-                     <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{asset(Auth::user()->avatar)}}">
+                     <img class="align-self-center rounded-circle mr-3 hov-img-zoom" style="width:85px; height:85px;" alt="" src="{{asset(Auth::user()->avatar)}}">
                      </a>
                      <div class="media-body">
                         <h2 class="text-white  display-6">{{Auth::user()->name}}</h2>
@@ -30,16 +41,20 @@
                </div>
                <div class="weather-category twt-category">
                   <ul>
-                     <li class="hover-effect showdiscussion">
+                  <li class="hover-effect tab-size showaboutme">
+                     <h5><i class="far fa-address-card"></i> </h5>
+                     About
+                     </li>
+                     <li class="hover-effect tab-size showdiscussion">
                         <h5>{{Auth::user()->discussions->count()}}</h5>
                         <i class="far fa-comment-alt"></i> Discussions
                      </li>
-                     <li class="hover-effect showfollowing">
+                     <li class="hover-effect tab-size showfollowing">
                         <h5>{{Auth::user()->followers->count()}}</h5>
                         <i class="fas fa-arrow-down"></i>
                          Followers
                      </li>
-                     <li class="hover-effect showfollowers">
+                     <li class="hover-effect tab-size showfollowers">
                         <h5>{{Auth::user()->following->count()}}</h5>
                         <i class="fas fa-arrow-up"></i> Followings
                      </li>
@@ -125,7 +140,7 @@
       <img src="{{asset($f->avatar)}}"  alt="Chyno Deluxe">
 		<h1>{{$f->name}}</h1>
       <h2>{{$f->profile->title}}</h2>
-      <a href="{{route('profile.user',['id' => $f->id])}}" class="btn btn-primary m-t-20 btn-sm">View Profile</a>
+      <a href="{{route('profile.user',['slug' => $f->slug])}}" class="btn btn-primary m-t-20 btn-sm">View Profile</a>
 
 		
 	</div>
