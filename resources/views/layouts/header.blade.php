@@ -31,7 +31,7 @@
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
-   
+    <link rel='stylesheet' href='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Country-Selecter-with-Flags-flagstrap/dist/css/flags.css'>
    <style>
        
    
@@ -296,8 +296,34 @@
     <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/datatables.min.js')}}"></script>
     <script src="{{asset('js\myownjs.js')}}"></script>
-   
-   
+    <script src='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Country-Selecter-with-Flags-flagstrap/dist/js/jquery.flagstrap.js'></script>
+   <script>
+   $('#basic').flagStrap();
+
+$('.select-country').flagStrap({
+	countries: {
+		"US": "USD",
+		"AU": "AUD",
+		"CA": "CAD",
+		"SG": "SGD",
+		"GB": "GBP",
+	},
+	buttonSize: "btn-sm",
+	buttonType: "btn-info",
+	labelMargin: "10px",
+	scrollable: false,
+	scrollableHeight: "350px"
+});
+
+$('#advanced').flagStrap({
+	buttonSize: "btn-lg",
+	buttonType: "btn-primary",
+	labelMargin: "20px",
+	scrollable: false,
+	scrollableHeight: "350px"
+});
+    
+   </script>
     <script>
         @if(Session::has('success'))
             toastr.success("{{Session::get('success')}}")
@@ -317,7 +343,7 @@
         @endif
     </script>
     
-    <script>
+    
    
     <script>
 $('[data-toggle="tooltip"]').tooltip('toggle', function(){

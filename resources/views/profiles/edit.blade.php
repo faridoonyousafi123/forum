@@ -5,77 +5,91 @@
    <div class="animated fadeIn">
       <!-- Widgets  -->
       <div class="row">
-         <div class="col-lg-12 col-md-6 col-sm-6 m-t-20">
-             <div class="col-lg-12">
-             <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Edit Profile</strong>
-                            </div>
-                            <div class="card-body">
-                                <!-- Credit Card -->
-                                <div id="pay-invoice">
-                                    <div class="card-body">
-                                        
-                                        
-                                        <form action="#" method="post" novalidate="novalidate">
-                                        <div class="avatar-upload">
-        <div class="avatar-edit">
-        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-            <label for="imageUpload">
-                <i class="fas m-l-8 colorgrey m-t-6 fa-pencil-alt"></i>
-        </label>
-            
-        </div>
-        <div class="avatar-preview">
-            <div id="imagePreview" style="background-image: url({{asset($user->avatar)}});">
-            </div>
-        </div>
-             </div>
-       
-    </div>
-                                            
-                                            <div class="form-group">
-                                                <label for="name" class="control-label mb-1">Name</label>
-                                                <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$user->name}}">
-                                            </div>
-                                            <div class="form-group has-success">
-                                                <i class="fab fs-30  m-b-5 facebook-icon fa-facebook-square"></i>
-                                                <input id="cc-name" name="facebook" type="text" value="{{$user->profile->facebook}}" class="form-control cc-name valid" data-val="true" data-val-required="Please enter Facebook URL" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
-                                                <!-- <span class="help-block field-validation-valid" data-valmsg-for="facebook" data-valmsg-replace="true"></span> -->
-                                            </div>
-
-                                            <div class="form-group has-success">
-                                            <i class="fab fs-30 twitter-icon m-b-5 fa-twitter"></i></i>
-                                                <input id="cc-name" name="twitter" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter Twitter URL" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="twitter">
-                                                <!-- <span class="help-block field-validation-valid" data-valmsg-for="twitter" data-valmsg-replace="true"></span> -->
-                                            </div>
-
-                                            <div class="form-group has-success">
-                                                <i class="fab fs-30 m-b-5 fa-github"></i>
-                                                <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
-                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                            </div>
-
-                                            <div class="form-group has-success">
-                                                <i class="fab fs-30  facebook-icon fa-facebook-square"></i>
-                                                <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
-                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                            </div>
-                                            
-                                            
-                                            <div>
-                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
-                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                                    <span id="payment-button-amount">Pay $100.00</span>
-                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-
-                            </div>
+         <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+               <div class="row m-0 backColor">
+                  <div class="col-sm-4">
+                     <div class="page-header foreColor float-left">
+                        <div class="page-title">
+                           <h1>Edit Profile</h1>
                         </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-12 m-t-20">
+            <div class="card">
+               <div class="card-body arrangePadding card-block">
+                  <form action="#" method="post" class="form-inline">
+                     <div class="card-body card-block">
+                        <div class="avatar-upload">
+                           <div class="avatar-edit">
+                              <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                              <label for="imageUpload">
+                              <i class="fas m-l-8 colorgrey m-t-6 fa-pencil-alt"></i>
+                              </label>
+                           </div>
+                           <div class="avatar-preview">
+                              <div id="imagePreview" style="background-image: url({{asset($user->avatar)}});">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-inline m-t-10 ">
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"> <i class="far m-r-3 fa-user"></i> Name *</label>
+                     <input type="text" id="exampleInputName2" validate required="true" value="{{$user->name}}" class="form-control m-t-5"></div>
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="far m-r-3 fa-envelope"></i> Email *</label>
+                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->email}}" class="form-control m-t-5"></div>
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-facebook"></i> Facebook</label>
+                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->facebook}}" class="form-control"></div>
+                     </div>
+                     
+                     <div class="form-inline m-t-10 ">
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-twitter"></i> Twitter</label>
+                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->twitter}}" class="form-control m-t-5"></div>
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-github"></i> Github</label>
+                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->github}}" class="form-control m-t-5"></div>
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-suitcase"></i> Title</label>
+                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->title}}" class="form-control m-t-5"></div>
+
+
+                     </div>
+                     <div class="form-inline m-t-10 ">
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-city"></i>City</label>
+                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->city}}" class="form-control m-t-5"></div>
+
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-globe-asia"></i> Country</label>
+                     <input type="email" id="exampleInputName2" validate required="true" class="form-control m-t-5"></div>
+                    
+                     </div>
+                     
+               
+                     
+                    
+
+
+               </div>
+               <div class="card-footer flex-sb-m  fs-12 m-t-30 time-color">
+                  <div class="text-right">
+              
+                    
+                     <button type="submit" class="hov-pointer" id="btn">
+                  Update
+                     </button>
+         
+            </div>
+
+            </form>
+               
+            </div>
          </div>
       </div>
    </div>
