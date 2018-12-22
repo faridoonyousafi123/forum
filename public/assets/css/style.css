@@ -2917,6 +2917,12 @@ footer.site-footer {
   font-size:13px;
   font-family: 'Rubik', sans-serif !important;
 }
+.input-text{
+  color:#7d7b7b;
+  font-size: 12px;
+  text-decoration: none !important;
+  font-style: italic;
+}
 @keyframes rotate{
   0%{
     transform: rotate(0deg);

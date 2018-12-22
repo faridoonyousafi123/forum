@@ -27,6 +27,7 @@
                      </a>
                      <div class="media-body">
                         <h2 class="text-white  display-6">{{Auth::user()->name}}</h2>
+         
                         <p class="text-light no-margin m-t-10 fs-14"><i class="fa fs-12 fa-suitcase m-r-10"></i>{{Auth::user()->profile->title}} </p>
                         <p class="text-light no-margin fs-14"><i class="fa fs-12 fa-building m-r-10"></i>{{Auth::user()->profile->company}} </p>
                         <p class="text-light no-margin fs-14"><i class="fa fs-12 fa-map-marked-alt m-r-10"></i>{{Auth::user()->profile->city}}, {{Auth::user()->profile->country}} </p>

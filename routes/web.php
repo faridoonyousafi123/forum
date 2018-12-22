@@ -128,6 +128,11 @@ Route::group(['middleware'=>'auth'], function(){
         'uses' => 'ProfilesController@userProfileEdit',
         'as' => 'profile.edit'
     ]);
+
+    Route::post('profile/update',[
+        'uses' => 'ProfilesController@update',
+        'as' => 'profile.update'
+    ]);
     
 
 });

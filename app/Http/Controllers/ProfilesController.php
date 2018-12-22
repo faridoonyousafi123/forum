@@ -66,6 +66,57 @@ class ProfilesController extends Controller
 
     public function update(Request $request){
 
+        $this->validate($request,[
+
+            'name'=>'required',
+            'email'=>'required|email',
+            // 'facebook'=>'required',
+            // 'youtube'=>'required'
+
+        ]);
+
+        $user=Auth::user();
+
+        if($request->hasFile('avatar'))
+        {
+            $avatar=$request->avatar;
+
+            $avatar_new_name=time().$avatar->getClientOriginalName();
+
+            $avatar->move('avatars/',$avatar_new_name);
+
+            $user->avatar='avatars/'.$avatar_new_name;
+
+            $user->save();
+
+        }
+
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->profile->facebook=$request->facebook;
+        $user->profile->twitter=$request->twitter;
+        $user->profile->github=$request->github;
+        $user->profile->city=$request->city;
+        $user->profile->about=$request->about;
+        $user->profile->company=$request->company;
+        $user->profile->title=$request->title;
+
+
+
+        
+
+        if($request->has('password'))
+        {
+            $user->password=bcrypt($request->password);
+            $user->save();
+        }
+        $user->save();
+        $user->profile->save();
+
+        Session::flash('success','Profile successfully updated');
+
+        return redirect()->back();
+    
 
     }
     

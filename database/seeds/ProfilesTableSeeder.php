@@ -19,10 +19,9 @@ class ProfilesTableSeeder extends Seeder
             'github' => 'https://www.github.com/faridoonyousafi123',
             'about' => 'Pasionate Afghan Web developer living in Kabul, Afghanistan',
             'company' => 'Netlinks',
-            'title' => 'System Analyst',
-            'city' => 'Kabul',
-            'country' => 'Afghanistan'
-
+             'title' => 'System Analyst',
+            'city' => 'Kabul'
+            
 
         ]);
         
@@ -35,8 +34,7 @@ class ProfilesTableSeeder extends Seeder
             'about' => 'Pasionate Afghan Web developer living in Kabul, Afghanistan',
             'company' => 'Netlinks',
             'title' => 'System Analyst',
-            'city' => 'Kabul',
-            'country' => 'Afghanistan'
+            'city' => 'Kabul'           
 
 
         ]);
@@ -50,9 +48,8 @@ class ProfilesTableSeeder extends Seeder
             'about' => 'Pasionate Afghan Web developer living in Kabul, Afghanistan',
             'company' => 'Netlinks',
             'title' => 'System Analyst',
-            'city' => 'Kabul',
-            'country' => 'Afghanistan'
-
+            'city' => 'Kabul'
+            
 
         ]);
         App\Profile::create([
@@ -64,8 +61,8 @@ class ProfilesTableSeeder extends Seeder
             'about' => 'Pasionate Afghan Web developer living in Kabul, Afghanistan',
             'company' => 'Netlinks',
             'title' => 'System Analyst',
-            'city' => 'Kabul',
-            'country' => 'Afghanistan'
+            'city' => 'Kabul'
+           
 
 
         ]);
@@ -78,8 +75,8 @@ class ProfilesTableSeeder extends Seeder
             'about' => 'Pasionate Afghan Web developer living in Kabul, Afghanistan',
             'company' => 'Netlinks',
             'title' => 'System Analyst',
-            'city' => 'Kabul',
-            'country' => 'Afghanistan'
+            'city' => 'Kabul'
+            
 
 
         ]);
@@ -92,8 +89,8 @@ class ProfilesTableSeeder extends Seeder
             'about' => 'Pasionate Afghan Web developer living in Kabul, Afghanistan',
             'company' => 'Netlinks',
             'title' => 'System Analyst',
-            'city' => 'Kabul',
-            'country' => 'Afghanistan'
+            'city' => 'Kabul'
+            
 
 
         ]);

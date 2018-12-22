@@ -21,11 +21,12 @@
          <div class="col-lg-12 m-t-20">
             <div class="card">
                <div class="card-body arrangePadding card-block">
-                  <form action="#" method="post" class="form-inline">
+                  <form action="{{route('profile.update')}}" method="post" class="form-inline" enctype="multipart/form-data">
+                  {{csrf_field()}}
                      <div class="card-body card-block">
                         <div class="avatar-upload">
                            <div class="avatar-edit">
-                              <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                              <input type='file' name="avatar" id="imageUpload" accept=".png, .jpg, .jpeg" />
                               <label for="imageUpload">
                               <i class="fas m-l-8 colorgrey m-t-6 fa-pencil-alt"></i>
                               </label>
@@ -36,39 +37,51 @@
                            </div>
                         </div>
                      </div>
-                     <div class="form-inline m-t-10 ">
+                     <div class="form-inline m-t-10">
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"> <i class="far m-r-3 fa-user"></i> Name *</label>
-                     <input type="text" id="exampleInputName2" validate required="true" value="{{$user->name}}" class="form-control m-t-5"></div>
+                     <input type="text" id="exampleInputName2" name="name" validate required="true" value="{{$user->name}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="far m-r-3 fa-envelope"></i> Email *</label>
-                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->email}}" class="form-control m-t-5"></div>
+                     <input type="email" id="exampleInputName2" name="email" validate required="true" value="{{$user->email}}" class="form-control m-t-5"></div>
 
-                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-facebook"></i> Facebook</label>
-                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->facebook}}" class="form-control"></div>
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-5 fa-unlock-alt"></i> New Password</label>
+                     <input type="password" id="exampleInputName2" name="password" validate class="form-control m-t-5"></div>
+                  
                      </div>
                      
-                     <div class="form-inline m-t-10 ">
+                     <div class="form-inline m-t-10">
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-twitter"></i> Twitter</label>
-                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->twitter}}" class="form-control m-t-5"></div>
+                     <input type="text" id="exampleInputName2" name="twitter" validate  value="{{$user->profile->twitter}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-github"></i> Github</label>
-                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->github}}" class="form-control m-t-5"></div>
+                     <input type="text" id="exampleInputName2" name="github" validate  value="{{$user->profile->github}}" class="form-control m-t-5"></div>
 
-                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-suitcase"></i> Title</label>
-                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->title}}" class="form-control m-t-5"></div>
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-facebook"></i> Facebook</label>
+                     <input type="text" id="exampleInputName2" name="facebook" validate  value="{{$user->profile->facebook}}" class="form-control m-t-5"></div>
 
+                     
+                  
 
                      </div>
-                     <div class="form-inline m-t-10 ">
+                     <div class="form-inline m-t-10">
+                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-suitcase"></i> Title</label>
+                     <input type="text" id="exampleInputName2" name="title" validate  value="{{$user->profile->title}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-city"></i>City</label>
-                     <input type="email" id="exampleInputName2" validate required="true" value="{{$user->profile->city}}" class="form-control m-t-5"></div>
+                     <input type="text" id="exampleInputName2" validate name="city" value="{{$user->profile->city}}" class="form-control m-t-5"></div>
 
-                     <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-globe-asia"></i> Country</label>
-                     <input type="email" id="exampleInputName2" validate required="true" class="form-control m-t-5"></div>
+                     
                     
+                     </div>
+                  
+                     <div class="card-body m-t-10 arrangePadding card-block">
+
+                     <div class="form-group m-l-60 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-city"></i>About</label>
+                     <textarea name="about" id="" cols="80"  class="form-control input-text" rows="10">{{$user->profile->about}}</textarea>
+                     
+</div>
                      </div>
                      
                
