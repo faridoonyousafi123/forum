@@ -40,26 +40,26 @@
                      <div class="form-inline m-t-10">
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"> <i class="far m-r-3 fa-user"></i> Name *</label>
-                     <input type="text" id="exampleInputName2" name="name" validate required="true" value="{{$user->name}}" class="form-control m-t-5"></div>
+                     <input type="text"  name="name" validate required="true" value="{{$user->name}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="far m-r-3 fa-envelope"></i> Email *</label>
-                     <input type="email" id="exampleInputName2" name="email" validate required="true" value="{{$user->email}}" class="form-control m-t-5"></div>
+                     <input type="email" name="email" validate required="true" value="{{$user->email}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-5 fa-unlock-alt"></i> New Password</label>
-                     <input type="password" id="exampleInputName2" name="password" validate class="form-control m-t-5"></div>
+                     <input type="password"  name="password" validate class="form-control m-t-5"></div>
                   
                      </div>
                      
                      <div class="form-inline m-t-10">
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-twitter"></i> Twitter</label>
-                     <input type="text" id="exampleInputName2" name="twitter" validate  value="{{$user->profile->twitter}}" class="form-control m-t-5"></div>
+                     <input type="text"  name="twitter" validate  value="{{$user->profile->twitter}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-github"></i> Github</label>
-                     <input type="text" id="exampleInputName2" name="github" validate  value="{{$user->profile->github}}" class="form-control m-t-5"></div>
+                     <input type="text"  name="github" validate  value="{{$user->profile->github}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fab m-r-3 fa-facebook"></i> Facebook</label>
-                     <input type="text" id="exampleInputName2" name="facebook" validate  value="{{$user->profile->facebook}}" class="form-control m-t-5"></div>
+                     <input type="text" name="facebook" validate  value="{{$user->profile->facebook}}" class="form-control m-t-5"></div>
 
                      
                   
@@ -67,10 +67,10 @@
                      </div>
                      <div class="form-inline m-t-10">
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-suitcase"></i> Title</label>
-                     <input type="text" id="exampleInputName2" name="title" validate  value="{{$user->profile->title}}" class="form-control m-t-5"></div>
+                     <input type="text" name="title" validate  value="{{$user->profile->title}}" class="form-control m-t-5"></div>
 
                      <div class="form-group m-l-80 m-b-10 edit-form-size"><label for="exampleInputName2" class="pr-1 m-l-3 item-justify-left form-control-label"><i class="fas m-r-3 fa-city"></i>City</label>
-                     <input type="text" id="exampleInputName2" validate name="city" value="{{$user->profile->city}}" class="form-control m-t-5"></div>
+                     <input type="text"  validate name="city" value="{{$user->profile->city}}" class="form-control m-t-5"></div>
 
                      
                     

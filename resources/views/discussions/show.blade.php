@@ -15,6 +15,7 @@
                   @if($discussion->user->is_followed_by_auth_user())
 
                       <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.unfollow',['user_id'=>$discussion->user->id])}}">Following</a>
+                      <a href="{{route('profile.user',['slug' => $discussion->user->slug])}}"> <i class="fas fa-eye"></i></a>
 
                   @elseif($discussion->user->id == Auth::user()->id)
 
@@ -23,6 +24,7 @@
 
 
                <a class="m-t-5 m-r-10 fs-16 btn btn-outline-primary follow-btn btn-sm" href="{{route('user.follow',['user_id'=>$discussion->user->id])}}">Follow</a>
+               <a href="{{route('profile.user',['slug' => $discussion->user->slug])}}"><i class="fas fa-eye"></i></a>
 
                @endif
 
@@ -38,16 +40,16 @@
                      
                      <div class="media-body">
                         <h2 class="text-white display-6">{{ $discussion->user->name }}</h2>
-                    
-                        @if(!$discussion->user->profile)
-                       
-
-
-                        @else
-                      
-
-                        @endif
-                      
+                        <!-- <p class="text-light">{{$discussion->user->profile->title}} at {{$discussion->user->profile->company}}</p> -->
+                        
+                        <p class="text-light no-margin m-t-10 fs-14"><i class="fa fs-12 fa-suitcase m-r-10"></i>{{$discussion->user->profile->title}} </p>
+                        <p class="text-light no-margin fs-14"><i class="fa fs-12 fa-building m-r-10"></i>{{$discussion->user->profile->company}} </p>
+                        <p class="text-light no-margin fs-14"><i class="fa fs-12 fa-map-marked-alt m-r-10"></i>{{$discussion->user->profile->city}} </p>
+                                <div class="text-left">       
+                               <a href="{{$discussion->user->profile->facebook}}"> <i class="rotate-effect text-white fab m-t-10 fa-facebook-f"></i></a>
+                                <i class="rotate-effect fab m-t-10 text-white fa-twitter"></i>
+                                <i class="rotate-effect fab m-t-10 text-white fa-github"></i>
+                                <i class="rotate-effect fab m-t-10 text-white fa-linkedin-in"></i>
 
                            
 
@@ -55,22 +57,7 @@
                      </div>
                   </div>
                </div>
-               <!-- <div class="weather-category twt-category">
-                  <ul>
-                     <li class="active">
-                        <h5>{{$discussion->where('user_id',$discussion->user->id)->count()}}</h5>
-                        Discussion
-                     </li>
-                     <li>
-                        <h5>{{$discussion->user->following->count()}}</h5>
-                        Following
-                     </li>
-                     <li>
-                        <h5>{{$discussion->user->followers->count()}}</h5>
-                        Followers
-                     </li>
-                  </ul>
-               </div> -->
+              
                
                <div class="twt-write m-t-20 col-lg-12">
                   <div class="col-lg-12">

@@ -2923,6 +2923,9 @@ footer.site-footer {
   text-decoration: none !important;
   font-style: italic;
 }
+.shadow-effect{
+  height: 389.781px !important;
+}
 @keyframes rotate{
   0%{
     transform: rotate(0deg);
