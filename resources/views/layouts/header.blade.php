@@ -231,8 +231,12 @@
 
                         <div class="user-menu dropdown-menu">
                         <a class="nav-link"><i class="fa fa- user"></i>{{Auth::user()->name}}</a>
-                            <a class="nav-link" href="{{route('profile.index',['slug' => Auth::user()->slug])}}"><i class="fa fa- user"></i>My Profile</a>
-                          
+                        @if(empty(Auth::user()->profile))
+                        <a class="nav-link" href="{{route('profile.edit',['slug' => Auth::user()->slug])}}"><i class="fa fa- user"></i>Set Profile</a>
+                        
+                          @else
+                          <a class="nav-link" href="{{route('profile.index',['slug' => Auth::user()->slug])}}"><i class="fa fa- user"></i>My Profile</a>
+                        @endif
 
                             <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
@@ -296,34 +300,7 @@
     <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/datatables.min.js')}}"></script>
     <script src="{{asset('js\myownjs.js')}}"></script>
-    <script src='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Country-Selecter-with-Flags-flagstrap/dist/js/jquery.flagstrap.js'></script>
-   <script>
-   $('#basic').flagStrap();
-
-$('.select-country').flagStrap({
-	countries: {
-		"US": "USD",
-		"AU": "AUD",
-		"CA": "CAD",
-		"SG": "SGD",
-		"GB": "GBP",
-	},
-	buttonSize: "btn-sm",
-	buttonType: "btn-info",
-	labelMargin: "10px",
-	scrollable: false,
-	scrollableHeight: "350px"
-});
-
-$('#advanced').flagStrap({
-	buttonSize: "btn-lg",
-	buttonType: "btn-primary",
-	labelMargin: "20px",
-	scrollable: false,
-	scrollableHeight: "350px"
-});
     
-   </script>
     <script>
         @if(Session::has('success'))
             toastr.success("{{Session::get('success')}}")

@@ -133,6 +133,8 @@ Route::group(['middleware'=>'auth'], function(){
         'uses' => 'ProfilesController@update',
         'as' => 'profile.update'
     ]);
+
+
     
 
 });

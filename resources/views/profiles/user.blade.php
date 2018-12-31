@@ -80,6 +80,7 @@
                                        <div class="col-lg-3 col-md-12">
                                           <div class="card">
                                              <i class="fas fa-bookmark green fs-30"></i>
+                                             <a href="{{route('discussion.show',['slug'=>$d->slug])}}">
                                              <div class="card-body">
                                                 <div class="stat-content text-center">
                                                    <div class="text-left dib">
@@ -87,6 +88,7 @@
                                                    </div>
                                                 </div>
                                              </div>
+                                             </a>
                                           </div>
                                        </div>
                                        @endforeach

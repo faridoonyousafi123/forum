@@ -71,15 +71,26 @@
                                     <div class="row">
                                        @foreach(Auth::user()->discussions as $d)
                                        <div class="col-lg-3 col-md-12">
-                                          <div class="card">
+                                          <div class="card card-size">
                                              <i class="fas fa-bookmark green fs-30"></i>
+                                             <a href="{{route('discussion.show',['slug'=>$d->slug])}}">
                                              <div class="card-body">
                                                 <div class="stat-content text-center">
+                                                <div class="stat-icon dib flat-color-4">
+                                        <i class="fs-30 m-r-10 ti-comment"></i>
+                                    </div>
                                                    <div class="text-left dib">
                                                       <div class="stat-text"><span class="count">{{$d->title}}</span></div>
                                                    </div>
+                                             
                                                 </div>
+                                              <div class="text-left dib">
+                                              <span class="text-right  fs-9">3 minutes ago</span>
+                                              </div>  
                                              </div>
+                                            
+                                             </a>
+                                            
                                           </div>
                                        </div>
                                        @endforeach

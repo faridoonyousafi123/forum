@@ -61,8 +61,10 @@
                
                <div class="twt-write m-t-20 col-lg-12">
                   <div class="col-lg-12">
-                     <strong class="card-title">{{$discussion->title}}<small><span class="badge badge-success float-right mt-1">Success</span></small></strong>
+                     <strong class="card-title">{{$discussion->title}}<small><span class="badge badge-success float-right mt-1">solved</span></small></strong>
                   </div>
+                  <a href="">
+                  </a>
                   <div class="card-body">
                      <p class="card-text">{{ $discussion->content }}</p>
                   </div>
@@ -147,6 +149,7 @@
                                           </li>
                                           @endforeach
                                           </ul>
+                                          
                                           <div class="position">
                                              Write new comment
                                              <form action="{{route('discussion.reply',['id' => $discussion->id])}}" method="post">

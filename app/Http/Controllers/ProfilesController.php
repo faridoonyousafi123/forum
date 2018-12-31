@@ -64,6 +64,12 @@ class ProfilesController extends Controller
 
     }
 
+    public function userProfileSet($slug){
+
+
+        return view ('profiles.set');
+    }
+
     public function update(Request $request){
 
         $this->validate($request,[
@@ -105,8 +111,9 @@ class ProfilesController extends Controller
 
         
 
-        if($request->has('password'))
+        if($request->filled('password'))
         {
+
             $user->password=bcrypt($request->password);
             $user->save();
         }
@@ -119,6 +126,8 @@ class ProfilesController extends Controller
     
 
     }
+
+    
     
 
 }

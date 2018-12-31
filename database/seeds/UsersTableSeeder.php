@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@admin.com',
             'admin' => 1,
             'slug' => str_slug('Faridoon Yousafi'),
-            'avatar' => 'avatars/admin.jpg'
+            'avatar' => 'avatars/user4.jpg'
         ]);
 
         App\User::create([

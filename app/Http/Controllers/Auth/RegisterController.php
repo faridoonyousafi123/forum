@@ -6,7 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use App\Profile;
 class RegisterController extends Controller
 {
     /*
@@ -67,7 +67,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'slug' => str_slug($data['name']),
             'password' => bcrypt($data['password']),
-
         ]);
+
+       
+
+
     }
 }
