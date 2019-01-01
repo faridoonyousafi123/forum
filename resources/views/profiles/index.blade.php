@@ -75,18 +75,24 @@
                                              <i class="fas fa-bookmark green fs-30"></i>
                                              <a href="{{route('discussion.show',['slug'=>$d->slug])}}">
                                              <div class="card-body">
-                                                <div class="stat-content text-center">
+                                                <div class="stat-content">
                                                 <div class="stat-icon dib flat-color-4">
                                         <i class="fs-30 m-r-10 ti-comment"></i>
                                     </div>
                                                    <div class="text-left dib">
                                                       <div class="stat-text"><span class="count">{{$d->title}}</span></div>
+                                                      
                                                    </div>
+                                                   <div class="text-right m-t-65">
+
+<span class="fs-9">{{$d->created_at->diffForHumans()}}</span>
+<i class="fas fs-12  fa-comments"></i><span class="m-l-5 stat-heading fs-9">{{ $d->replies->count() }}</span>
+<i class="fas fs-12  fa-thumbs-up"></i><span class="m-l-5 stat-heading fs-9">{{$d->likes->count()}}</span>
+
+</div>  
                                              
                                                 </div>
-                                              <div class="text-left dib">
-                                              <span class="text-right  fs-9">3 minutes ago</span>
-                                              </div>  
+                                             
                                              </div>
                                             
                                              </a>
