@@ -135,6 +135,15 @@ Route::group(['middleware'=>'auth'], function(){
     ]);
 
 
+
+    //chat room
+
+    Route::get('chatroom',[
+        'uses' => 'ChatsController@index',
+        'as' => 'chat.enter'
+    ]);
+
+
     
 
 });

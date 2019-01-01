@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -103,6 +104,10 @@
   font-size: 18px;
  
   letter-spacing: 1px;
+}
+.chat{
+    overflow-y: scroll;
+    height: 600px;
 }
     </style>
 </head>
@@ -267,7 +272,66 @@
             </div>
         </header>
 
-        @yield('content')
+        <div class="content">
+           
+           <div class="animated fadeIn">
+             
+               <div class="row" id="app">
+                
+                   <div class="col-lg-12">
+                       <div class="card">
+                           <div class="card-body">
+                               <h4 class="card-title box-title">Live Chat</h4>
+                               <div class="card-content">
+                                   <div class="messenger-box">
+                                       <ul class="chat list-group">
+                                          <message></message>
+                                          
+                                           
+                                         
+                                         
+                                          
+                                           <li>
+                                               <div class="msg-sent msg-container">
+                                                   <div class="avatar">
+                                                      <img src="images/avatar/64-2.jpg" alt="">
+                                                      <div class="send-time">11.11 am</div>
+                                                   </div>
+                                                   <div class="msg-box">
+                                                       <div class="inner-box">
+                                                           <div class="name">
+                                                               John Doe
+                                                           </div>
+                                                           <div class="meg">
+                                                               Hay how are you doing?
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div><!-- /.msg-sent -->
+                                               
+                                           </li>
+
+                                           
+                                       </ul>
+                                       <div class="send-mgs">
+                                           <div class="yourmsg">
+                                               <input class="form-control" type="text" v-model='message' @keyup.enter='send'>
+                                           </div>
+                                           <button class="btn msg-send-btn">
+                                               <i class="pe-7s-paper-plane"></i>
+                                           </button>
+                                       </div>
+                                   </div><!-- /.messenger-box -->
+                               </div>
+                           </div> <!-- /.card-body -->
+                       </div><!-- /.card -->
+                   </div>
+               </div>
+              
+       
+       </div>
+     
+   </div>
 </body>
          <!-- Scripts -->
  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
@@ -306,6 +370,7 @@
     <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/datatables.min.js')}}"></script>
     <script src="{{asset('js\myownjs.js')}}"></script>
+    <script src="{{asset('js\app.js')}}"></script>
     
     <script>
         @if(Session::has('success'))
@@ -329,7 +394,7 @@ $('[data-toggle="tooltip"]').tooltip('toggle', function(){
 
 
     <!--Local Stuff-->
-    <script>
+    <!-- <script>
         jQuery(document).ready(function($) {
             "use strict";
 
@@ -519,9 +584,16 @@ $('[data-toggle="tooltip"]').tooltip('toggle', function(){
             });
             // Bar Chart #flotBarChart End
         });
-    </script>
+    </script> -->
    
     
      
 </body>
 </html>
+
+   
+    
+  
+
+
+

@@ -2930,6 +2930,9 @@ footer.site-footer {
 .card-size{
   height: 180px !important;
 }
+.chat-color{
+  color:#99abb4;
+}
 @keyframes rotate{
   0%{
     transform: rotate(0deg);
