@@ -83,6 +83,8 @@ class ProfilesController extends Controller
 
         $user=Auth::user();
 
+        
+
         if($request->hasFile('avatar'))
         {
             $avatar=$request->avatar;

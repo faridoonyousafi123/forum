@@ -143,6 +143,13 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'chat.enter'
     ]);
 
+    Route::get('send',[
+        'uses' => 'ChatsController@send',
+        'as' => 'chat.send'
+
+    ]);
+
+
 
     
 

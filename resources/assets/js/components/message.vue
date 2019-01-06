@@ -8,15 +8,15 @@
                                                    <div class="msg-box">
                                                        <div class="inner-box">
                                                            <div class="name">
-                                                               John Doe
+                                                               You
                                                            </div>
                                                            <div class="meg">
-                                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sunt placeat velit ad reiciendis ipsam
+                                                               <slot></slot>
                                                            </div>
                                                        </div>
                                                    </div>
                                                </div><!-- /.msg-received -->
-                                           </li>
+        </li>
                                           
 </template>
 

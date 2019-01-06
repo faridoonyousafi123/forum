@@ -284,8 +284,8 @@
                                <h4 class="card-title box-title">Live Chat</h4>
                                <div class="card-content">
                                    <div class="messenger-box">
-                                       <ul class="chat list-group">
-                                          <message></message>
+                                       <ul class="chat list-group" v-chat-scroll>
+                                         
                                           
                                            
                                          
@@ -307,9 +307,21 @@
                                                            </div>
                                                        </div>
                                                    </div>
-                                               </div><!-- /.msg-sent -->
+                                               </div>
                                                
                                            </li>
+                                           
+
+                                           <message  
+                                           
+                                           v-for="value in chat.message"
+                                           :key=value.index>
+                                         
+                                         @{{ value }}
+                                         </message>
+
+
+                                         
 
                                            
                                        </ul>
