@@ -42,8 +42,8 @@
 
                               <div class="col-lg-12 text-center">
                               <div class="test-center">
-                           <button type="submit" class="btn btn-success btn-sm">
-                           <i class="far fa-dot-circle"></i> Create
+                           <button type="submit" class="btn btn-info btn-sm">
+                           <i class="far fa-dot-circle"></i> Update
                            </button>
                            <button type="reset" class="btn btn-danger btn-sm">
                            <i class="fa fa-ban"></i> Reset
